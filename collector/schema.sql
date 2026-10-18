@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS validation_sessions (
   source text NOT NULL,
   role text NOT NULL,
   measurement boolean NOT NULL,
+  consent_version text NOT NULL,
   test boolean NOT NULL DEFAULT false,
   flags integer NOT NULL DEFAULT 0
 );

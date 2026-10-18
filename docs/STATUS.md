@@ -6,6 +6,8 @@ Demand validation now takes priority over product expansion. The current proposa
 
 The new `demand-validation.yml` workflow runs tests/build on manual dispatch. Daily aggregate reads at 05:41 UTC remain gated by `VENTURE_VALIDATION_ENABLED=false`; no personal data or secret has been placed in GitHub. Existing research automation below is preserved and is not a customer-demand measurement.
 
+The revised landing page and original checklist are **live**, 12 public assets match the deployed source, and hosted verification passed **67 tests**, the dependency audit and build. IndexNow acknowledged both public page submissions; indexing and genuine visitors remain unproven. The activation request is pending; no paid-product development is justified yet.
+
 ## Earlier deployment and research status
 
 **The free evaluator is live and daily research automation is enabled. Sales remain disabled.**

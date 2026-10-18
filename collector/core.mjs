@@ -83,7 +83,9 @@ export function createHandler(store, config, clock=()=>Date.now()) {
           throw new Invalid(400,'Affirmative consent and a person using the page are required.');
         choice(data.role,ROLES);choice(data.source,SOURCES);
         const raw=token(), id=sha(raw), test=same(request.headers.get('x-validation-qa'),config.qaKey);
-        await store.admit({id,created_at:now,source:data.source,role:data.role,measurement:data.measurement,test,flags:0});
+        await store.purge(now-30*86400000);
+        await store.admit({id,created_at:now,source:data.source,role:data.role,measurement:data.measurement,
+          consent_version:CONSENT,test,flags:0});
         return reply({token:raw,expires_in:14400,experiment:EXPERIMENT},201);
       }
       if(path==='/withdraw') {

@@ -38,6 +38,8 @@ test('explicit consent, allowed origin, honeypot and bot checks protect admissio
   assert.equal((await f.call('/session',body,null,{origin:'https://other.invalid'})).status,403);
   assert.equal((await f.call('/session',body,null,{'user-agent':'Googlebot'})).status,403);
   assert.equal(f.sessions.size,0);
+  const first=await f.begin();assert.equal(f.sessions.get(sha(first)).consent_version,CONSENT);
+  f.advance(30*86400000+1);await f.begin();assert.equal(f.sessions.size,1);
 });
 test('bounded JSON rejects excess data and requests without valid authentication',async()=>{
   const f=fixture();

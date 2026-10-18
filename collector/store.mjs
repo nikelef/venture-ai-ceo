@@ -15,8 +15,8 @@ export function postgresStore(pool) {
       const daily=await c.query('SELECT admissions FROM validation_limits WHERE day=$1',[day]);
       if(counts.rows[0].n>=5000 || (daily.rows[0]?.admissions||0)>=500) capacity();
       await c.query('INSERT INTO validation_limits(day,admissions) VALUES($1,1) ON CONFLICT(day) DO UPDATE SET admissions=validation_limits.admissions+1',[day]);
-      await c.query('INSERT INTO validation_sessions(id,created_at,source,role,measurement,test,flags) VALUES($1,$2,$3,$4,$5,$6,0)',
-        [row.id,row.created_at,row.source,row.role,row.measurement,row.test]);
+      await c.query('INSERT INTO validation_sessions(id,created_at,source,role,measurement,consent_version,test,flags) VALUES($1,$2,$3,$4,$5,$6,$7,0)',
+        [row.id,row.created_at,row.source,row.role,row.measurement,row.consent_version,row.test]);
     });},
     async session(id) {return (await query('SELECT * FROM validation_sessions WHERE id=$1',[id])).rows[0];},
     async event(id,flag) {await query('UPDATE validation_sessions SET flags=flags|$2 WHERE id=$1 AND flags&$2=0',[id,flag]);},

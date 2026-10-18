@@ -1,0 +1,114 @@
+{
+  "commit": "e8909fd6e0e6b12ea2408486b3b8d41ac5986a5e",
+  "deployment_id": "dep-dbajpravcj2c73aavgi0",
+  "assets": [
+    {
+      "path": "index.html",
+      "http_status": 200,
+      "sha256": "fcdcb3f656d218ed43860933abae0e1ed6a533065e0a129f51f5e96cf6a4ae84",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "catalog.js",
+      "http_status": 200,
+      "sha256": "3975cfce96ce8aa227b59ab50739c3fb304d3bcb51ff34ece37a9ffdcf0f5bce",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "app.js",
+      "http_status": 200,
+      "sha256": "5bb3657d5e270bfbb986019516e2a0dcfe937eec3c3a08695aa1c858a4b4f37a",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "demand.js",
+      "http_status": 200,
+      "sha256": "46fc16db46ba88f4744a9c316dadb1a187e7e807ae48cf5f376841cc48eab27b",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "experiment-config.js",
+      "http_status": 200,
+      "sha256": "4054518e203b89291396734b998d06ee67795215353bfa46973120c22440bb80",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "review-notice.html",
+      "http_status": 200,
+      "sha256": "be9b26577276928768657dd8fbc3dd8e195b68e874996fbe07a4cdabda90028f",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "style.css",
+      "http_status": 200,
+      "sha256": "d22ff8b83e76a993131a8c5d68916ce4075e525376d70545de68132800d6187c",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "shopify-csv-checklist.html",
+      "http_status": 200,
+      "sha256": "bf5492353bb2b7a67fb3179a5c7bde2c0761d286363306a74ddc3a3bc8cd70b0",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "sitemap.xml",
+      "http_status": 200,
+      "sha256": "54809a4e7bb5f56c58aec135c2ce8e4f14ac0e7aa2f89f62b5da0ec0f4cc4cc0",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "robots.txt",
+      "http_status": 200,
+      "sha256": "fce83203166a8cc6ad4a7d4210bd113031e010b40f34cf82e1b41e2082c3ae1a",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "venturecatalogpreflight20261019.txt",
+      "http_status": 200,
+      "sha256": "3f7c5960c9689fef56f0d72470db6346a2241607005487689a7efa352fad960c",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "health.json",
+      "http_status": 200,
+      "sha256": "376384887193c94b6ec76bc5bb834d1456df81d8f56d08a7af35e85b08665f29",
+      "matches_deployed_commit": true
+    }
+  ],
+  "agent_checks_are_not_customer_visitors": true,
+  "collection_enabled": false,
+  "recorded_at_utc": "2026-10-18T21:46:11.470340+00:00",
+  "render_url": "https://venture-ai-ceo-evaluator.onrender.com",
+  "hosted_checks": {
+    "run_id": 39168935430,
+    "conclusion": "success",
+    "python_tests": 45,
+    "node_tests": 22,
+    "production_dependency_advisories": 0,
+    "clean_install_and_build": "passed"
+  },
+  "indexnow": [
+    {
+      "path": "/",
+      "http_status": 202,
+      "meaning": "received; key verification pending at submission"
+    },
+    {
+      "path": "/shopify-csv-checklist.html",
+      "http_status": 200,
+      "meaning": "received; not evidence of indexing or visitors"
+    }
+  ],
+  "private_paths_404": [
+    "/.env",
+    "/.git/config",
+    "/MASTER_PROMPT.md",
+    "/collector/core.mjs"
+  ],
+  "backend_deployed": false,
+  "verified_unique_visitors": null,
+  "customer_evidence": [],
+  "actual_collected_registrations": 0,
+  "verified_willing_to_pay": 0,
+  "payments_enabled": false
+}
