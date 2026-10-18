@@ -86,6 +86,13 @@ class RuntimeTests(unittest.TestCase):
             store.backup(backup)
             with contextlib.closing(sqlite3.connect(backup)) as connection:
                 self.assertEqual(connection.execute("SELECT COUNT(*) FROM events").fetchone()[0], 1)
+            restore_dir = self.directory / "restored"
+            store.backup(restore_dir / "research.sqlite3")
+            restored = Store(restore_dir)
+            try:
+                self.assertEqual(restored.verify(), 1)
+            finally:
+                restored.close()
             store.connection.execute("DROP TRIGGER events_no_update")
             store.connection.execute("UPDATE events SET payload='{}'")
             store.connection.commit()
@@ -97,6 +104,8 @@ class RuntimeTests(unittest.TestCase):
     def test_execution_ceiling_and_in_progress_lock(self):
         store = Store(self.directory)
         try:
+            with self.assertRaises(PolicyDenied):
+                store.start_run(5, 3)
             run_id = store.start_run(1, 3)
             with self.assertRaises(PolicyDenied):
                 store.start_run(4, 3)
@@ -150,6 +159,35 @@ class RuntimeTests(unittest.TestCase):
             (self.directory / "STOP").touch()
         with self.assertRaises(PolicyDenied):
             schedule(2, 60, worker=lambda _: 0, sleep=stop)
+
+    def test_health_exposes_a_failed_run_without_claiming_live_operation(self):
+        store = Store(self.directory)
+        run_id = store.start_run(4, 3)
+        store.finish_run(run_id, success=False, evidence={"error_type": "SyntheticFailure"})
+        store.close()
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            self.assertEqual(main(["--health"]), 1)
+        status = json.loads(output.getvalue())
+        self.assertEqual(status["status"], "attention_required")
+        self.assertEqual(status["last_run_status"], "failed")
+        self.assertFalse(status["cloud_schedule_verified"])
+
+    def test_backup_failure_remains_a_failure_in_health_and_append_only_history(self):
+        with patch.object(Store, "backup", side_effect=OSError("synthetic")), \
+                contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(main([]), 1)
+        output = io.StringIO()
+        with contextlib.redirect_stdout(output):
+            self.assertEqual(main(["--health"]), 1)
+        self.assertEqual(json.loads(output.getvalue())["last_run_status"], "failed")
+        store = Store(self.directory)
+        try:
+            self.assertEqual(store.verify(), 3)
+            kinds = [row[0] for row in store.connection.execute("SELECT kind FROM events ORDER BY seq")]
+            self.assertEqual(kinds, ["run_started", "run_complete", "run_backup_failed"])
+        finally:
+            store.close()
 
 
 if __name__ == "__main__":

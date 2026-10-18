@@ -31,6 +31,14 @@ class ResearchTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate(fake, SOURCES)
 
+    def test_invalid_output_cannot_be_written_directly(self):
+        scratch = Path(__file__).resolve().parents[1] / ".tmp" / "tests"
+        scratch.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(dir=scratch) as directory:
+            with self.assertRaises(ValueError):
+                write_results({**IDEA, "evidence_urls": ["javascript:alert(1)"]}, SOURCES, Path(directory))
+            self.assertFalse((Path(directory) / "decision.json").exists())
+
     def test_escapes_model_html(self):
         idea = {**IDEA, "idea": "<script>alert(1)</script>"}
         page = render_landing(idea, "today")

@@ -104,18 +104,25 @@ def fetch_feed(url: str, limit: int = 7) -> list[dict[str, str]]:
     return items
 
 
-def gather(max_items: int = 18) -> list[dict[str, str]]:
+def gather(max_items: int = 18, *, record=None) -> list[dict[str, str]]:
     result = []
     seen = set()
     for url in FEEDS:
         try:
-            for item in fetch_feed(url):
+            if record is not None:
+                record("feed_fetch_attempted", {"feed_url": url, "authorized_outlay_eur": "0"})
+            fetched = fetch_feed(url)
+            if record is not None:
+                record("feed_fetch_complete", {"feed_url": url, "items": len(fetched)})
+            for item in fetched:
                 if item["url"] not in seen:
                     result.append(item)
                     seen.add(item["url"])
                     if len(result) >= max_items:
                         return result
         except (TimeoutError, OSError, ET.ParseError, ValueError) as exc:
+            if record is not None:
+                record("feed_fetch_failed", {"feed_url": url, "error_type": type(exc).__name__})
             print(f"WARN feed failed: {urllib.parse.urlparse(url).hostname}: {type(exc).__name__}", file=sys.stderr)
     return result
 
@@ -170,8 +177,10 @@ def validate(result: dict[str, Any], entries: list[dict[str, str]]) -> dict[str,
         raise ValueError("Invalid price hypothesis")
     allowed = {e["url"] for e in entries}
     sources = result.get("evidence_urls")
-    if not isinstance(sources, list) or not sources or any(not isinstance(u, str) or u not in allowed or not public_https(u) for u in sources):
+    if not isinstance(sources, list) or not 1 <= len(sources) <= len(allowed) or any(not isinstance(u, str) or u not in allowed or not public_https(u) for u in sources):
         raise ValueError("Unverified or missing cited URLs")
+    if len(set(sources)) != len(sources):
+        raise ValueError("Duplicate cited URLs")
     for k, low, high in (("counterarguments", 2, 4), ("alternative_ideas", 2, 2)):
         val = result.get(k)
         if not isinstance(val, list) or not low <= len(val) <= high or any(not isinstance(s, str) or not s.strip() or len(s) > 700 for s in val):
@@ -190,6 +199,7 @@ def render_landing(result: dict[str, Any], created: str) -> str:
 
 def write_results(result: dict[str, Any], entries: list[dict[str, str]], dest: Path, *, metadata: dict | None = None) -> str:
     authorize(Action.RESEARCH, data_dir=dest)
+    result = validate(result, entries)
     dest.mkdir(parents=True, exist_ok=True)
     public = dest / "public"
     public.mkdir(exist_ok=True)
@@ -224,9 +234,12 @@ def main(argv: list[str] | None = None) -> int:
             if not (dest / "research.sqlite3").is_file():
                 raise RuntimeError("No local research run has been recorded")
             store = Store(dest)
-            print(json.dumps({"status": "local_audit_ok", "audit_events": store.verify(),
+            last = store.connection.execute("SELECT status,created_at FROM runs ORDER BY rowid DESC LIMIT 1").fetchone()
+            healthy = last is not None and last[0] == "complete"
+            print(json.dumps({"status": "local_audit_ok" if healthy else "attention_required", "audit_events": store.verify(),
+                              "last_run_status": last[0] if last else "never_run", "last_run_at": last[1] if last else None,
                               "cloud_schedule_verified": False, "sales_enabled": False}))
-            return 0
+            return 0 if healthy else 1
         store = Store(dest)
         run_id = store.start_run(bounded_int("MAX_RUNS_PER_DAY", 4, 1, 4), 3)
         candidates, evidence = ranked(DEFAULT_EVIDENCE)
@@ -240,7 +253,7 @@ def main(argv: list[str] | None = None) -> int:
             "evidence_urls": [source_by_id[key] for key in winner["sources"]],
             "counterarguments": [winner["counterargument"], winner["assumption"]],
             "alternative_ideas": [item["name"] for item in candidates[1:3]]}, sources)
-        refreshed = gather(bounded_int("MAX_ITEMS", 18, 3, 25)) if args.live_feeds else []
+        refreshed = gather(bounded_int("MAX_ITEMS", 18, 3, 25), record=store.append) if args.live_feeds else []
         if args.live_feeds and not refreshed:
             raise RuntimeError("No live feed succeeded")
         report_hash = write_results(decision, sources, dest, metadata={
@@ -252,7 +265,11 @@ def main(argv: list[str] | None = None) -> int:
             "source_count": len(sources), "live_feed_count": len(refreshed), "model_calls": 0,
             "tool_cost_eur": "0", "cost_scope": "pilot runtime only; excludes this Codex session",
             "verified_payment_count": 0})
-        store.backup(dest / "backups" / f"{run_id}.sqlite3")
+        try:
+            store.backup(dest / "backups" / f"{run_id}.sqlite3")
+        except (OSError, sqlite3.Error, RuntimeError) as exc:
+            store.record_backup_failure(run_id, type(exc).__name__)
+            raise
         print(json.dumps({"status": "research_only", "source_mode": "curated_evidence_replay",
                           "source_count": len(sources), "idea": decision["idea"],
                           "verified_payment_count": 0, "authorized_outlay_eur": "0", "audit_hash": audit_hash}))

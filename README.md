@@ -1,45 +1,61 @@
-# Venture CEO — research-first, no-bank-access AI CEO starter
+# Venture CEO
 
-## What is implemented
-A zero-outlay research pilot scores ten documented opportunities from a curated register of public sources, records assumptions and skeptical reviews, selects one concept plus two alternates, and writes a clearly labeled research page. It stores a local SQLite audit chain, limits daily executions, stops after repeated failures, verifies a backup, and supports a bounded scheduler and shutdown switch. Default execution makes no network or model requests. `--live-feeds` explicitly refreshes three allowlisted public RSS endpoints; refreshed news is not buyer validation.
+A private, zero-outlay research pilot and a working local catalog CSV evaluator. **No business has launched, no checkout or cloud schedule is active, and no customer payment or revenue has been verified.** Operating instructions remain in [MASTER_PROMPT.md](MASTER_PROMPT.md).
 
-The EUR 0 ceiling is enforced in code. Setting a model key or a nonzero budget environment variable does not authorize spending. Model calls, payments, notifications and external publishing are blocked in this pilot. The optional OpenAI-compatible request adapter exists behind that gate and has not been verified against a live provider. A local hash chain detects retained-chain changes; external immutable anchoring remains a future prerequisite.
-
-**No paid sales or deployment are activated.** The more comprehensive implementation and operating rules are in `MASTER_PROMPT.md` for Codex to build. This is a research prototype, not a finished autonomous commercial business.
-
-## Start with Codex on Windows — no separate repository instructions
-
-After extracting this package into a **new, dedicated directory** (not inside an existing project), double-click `START_AI_CEO.cmd`. It launches the installed Codex CLI with instructions to read and execute the complete `MASTER_PROMPT.md` — including **creating your private** `nikelef/venture-ai-ceo` **GitHub repository automatically**, committing only safe source files, connecting that repo to Render where feasible, and implementing the sales and payment architecture.
-
-You do **not** need to type GitHub setup instructions or create the repository manually. You may need to complete a GitHub browser sign-in, grant Render/GitHub integration permissions, and later complete payment processor identity/tax/payout onboarding using the provider's own secure portal. Codex cannot lawfully do those personal verification steps for you. No payment or revenue capability is live in the current starter package; the master prompt tells Codex to **build and verify it**, not pretend it already exists. Creating or paying for cloud resources still requires your express authorization.
+The repository bootstrap was performed with GitHub CLI: [nikelef/venture-ai-ceo](https://github.com/nikelef/venture-ai-ceo), private, default branch `main`. Render account access works in the approved NE workspace. Deployment awaits verification of zero-charge usage safeguards and public operator/privacy readiness. No existing Render service has been modified.
 
 ## Run locally
-Python 3.11+:
 
-```bash
-python -m venv .venv
-source .venv/bin/activate             # Windows PowerShell: .venv\\Scripts\\Activate.ps1
-pip install -r requirements.txt
-cp .env.example .env                 # Windows: copy .env.example .env
+Python 3.11+ is sufficient; the application has no third-party runtime dependencies. Node.js 24 was used for the browser-product tests. No API key, account signup or payment method is needed.
+
+```powershell
 python -m ai_ceo.worker
 python -m ai_ceo.worker --health
-python -m http.server 8000 --directory data/public
+python -m ai_ceo.server
 ```
 
-The research page will be at http://localhost:8000/ . No API key is needed for the default curated-evidence replay. The tool reads environment variables but intentionally does not load .env automatically. Keep optional provider credentials in environment variables or a deployment secret manager. Do not assume a proprietary provider supports an OpenAI-compatible API.
+The evaluator is at **http://127.0.0.1:8000/** while the preview process runs. It serves only an allowlist of public assets. The conceptual research page is separately stored in `data/public/index.html`; it is not a shop. Stop the preview with Ctrl+C. No process starts automatically.
 
-Run `python -m ai_ceo.scheduler --runs 2 --interval-seconds 3600` for a bounded foreground schedule. This does not install a cloud schedule. Stop with `AI_CEO_SHUTDOWN=true` or a `data/STOP` file; the scheduler checks at least once per second while waiting. Crashed in-progress runs require review rather than automatic duplicate execution. Local state and backups are private and ignored by Git.
+Default execution replays dated, curated public evidence and scores ten opportunities using the master prompt's weights. It selects a winner plus two alternates and preserves counterarguments, assumptions, provenance and confidence. It is not a fresh market scan or demand validation. Optional `python -m ai_ceo.worker --live-feeds` refreshes three allowlisted RSS endpoints; this does not refresh the vendor evidence or prove buying intent.
 
-For a credential-free dry run of output validation and HTML creation:
+The evaluator checks UTF-8 comma-separated files locally in the browser: quoting, record shape, duplicate headings and a limited subset of Shopify catalog hints. It supports current/legacy heading aliases, handles image continuation rows, and downloads JSON diagnostics without source headings or cell values. It makes no upload, analytics or model requests. A clean report does not guarantee a successful import. It never modifies a store.
 
-```bash
+## Verify
+
+```powershell
 python -m unittest discover -s tests -v
+node --test tests/catalog.test.cjs
 python scripts/check_repository.py
 ```
 
-## Cloud and money prerequisites
-To operate while the laptop is off, deploy the worker to **a cloud scheduler or a persistent background worker** with secure environment variables, durable storage and monitoring. A local run stops when the process/computer stops. A static landing page is not a business and cannot collect genuine revenue. Before enabling money flows, set up a legitimate legal/tax business arrangement as applicable, secure payment-processor onboarding, hosted checkout, signed webhooks, order fulfillment, refunds/privacy/support, real audit records and money alerts. The owner should enter payout details **inside the payment provider's secure portal**, not in chat, voice input, GitHub or prompt text.
+Tests cover budget and permission denials, shutdown, execution caps, circuit breakers, local HTTP behavior, audit tampering/backups, CSV parsing/privacy/resource limits, synthetic webhook signatures, order matching, duplicate events, idempotent test fulfillment and separate-currency reconciliation. Payment fixtures are synthetic; passing them does not verify a live provider or sale. Local HTTP integration is tested; visual browser inspection was unavailable in this session.
 
-Do not commit `.env` or generated customer data. Defaults to **zero authorized spend**, no checkout and no automated publishing. This reflects deliberate least-privilege design, not a claim of current launch.
+## Budget, state and shutdown
 
-Render's scheduled cron jobs are a suitable option once a deployable repository, service permissions, credentials and persistent state are arranged. Any Render services must use the specific workspace selected by the owner.
+- Authorized incremental operating outlay is **EUR 0**. Model calls, publishing, payments and owner notifications are denied. Setting keys, `PAYMENTS_ENABLED=true` or a larger budget in the environment does not grant authority.
+- Four research runs per UTC day are the hard maximum. Three consecutive failed runs open the circuit breaker. Stale in-progress runs require review. Each run records evidence hashes and runtime cost scope; it does not estimate this Codex session's cost.
+- State is local SQLite in ignored `data/`, with append-only audit triggers, a hash chain and integrity-checked backups. This is not an externally immutable or cloud-backed ledger. Private state and backups stay out of Git.
+- `AI_CEO_SHUTDOWN=true` or `data/STOP` stops new research and local preview requests. The bounded scheduler checks during waits. Downloaded evaluator copies are independent files.
+
+For a bounded foreground schedule:
+
+```powershell
+python -m ai_ceo.scheduler --runs 2 --interval-seconds 3600
+```
+
+This runs only while that process and computer run. No cloud schedule, timer, background service or GitHub Actions workflow has been activated.
+
+The application reads process environment variables and does not load `.env` automatically. `.env.example` contains empty/example settings. Secrets belong in environment variables or a deployment secret manager. Never provide bank logins, authentication codes or payout details to this application or commit them to Git.
+
+## Readiness and evidence
+
+- [Research and skeptical selection](research/RESEARCH.md) and [source register](research/opportunities.json)
+- [Deployment constraints and prepared Render configuration](docs/DEPLOYMENT.md)
+- [Provider adapter and unverified integration limits](docs/PROVIDERS.md)
+- [Commerce implementation and blocked activation](docs/COMMERCE_READINESS.md)
+- [Current blockers and continuation work](docs/STATUS.md)
+- [Privacy draft](docs/PRIVACY_DRAFT.md), [terms draft](docs/TERMS_DRAFT.md), [refunds draft](docs/REFUNDS_DRAFT.md) — all require legal review
+
+`render.yaml` prepares one static evaluator from this repository only. No deployment was performed. Render's current free hosting can incur usage overages, and its free service types do not include a durable worker/cron. The zero-outlay rule prevents activation until safeguards are verified.
+
+Commerce components are **test-only**: signed synthetic events, a separate test ledger, a local deliverable ZIP and integer reconciliation exercises. Hosted checkout transport, onboarding, live payment verification, customer delivery, refunds, support, legal/tax readiness and verified-revenue notifications remain unconfigured. No test result is counted as revenue.

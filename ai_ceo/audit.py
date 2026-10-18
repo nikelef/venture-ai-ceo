@@ -13,7 +13,7 @@ import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 
-from ai_ceo.policy import PolicyDenied
+from ai_ceo.policy import HARD_MAX_FAILURES, HARD_MAX_RUNS_PER_DAY, PolicyDenied
 
 
 def utcnow() -> str:
@@ -72,6 +72,9 @@ class Store:
         return count
 
     def start_run(self, max_per_day: int, max_failures: int) -> str:
+        if type(max_per_day) is not int or not 1 <= max_per_day <= HARD_MAX_RUNS_PER_DAY or \
+                type(max_failures) is not int or not 1 <= max_failures <= HARD_MAX_FAILURES:
+            raise PolicyDenied("Run limits cannot exceed hard ceilings")
         with self.connection:
             self.connection.execute("BEGIN IMMEDIATE")
             self.verify()
@@ -109,3 +112,9 @@ class Store:
             self.connection.backup(backup)
             if backup.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
                 raise RuntimeError("Backup integrity check failed")
+
+    def record_backup_failure(self, run_id: str, error_type: str) -> None:
+        with self.connection:
+            self.connection.execute("BEGIN IMMEDIATE")
+            self.connection.execute("UPDATE runs SET status='failed' WHERE id=? AND status='complete'", (run_id,))
+            self._append("run_backup_failed", {"run_id": run_id, "error_type": error_type})

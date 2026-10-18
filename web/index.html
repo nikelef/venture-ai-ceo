@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Catalog Preflight — check your CSV before import</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="catalog.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header><a class="wordmark" href="index.html">Venture CEO<span> / tools</span></a><span class="badge">Research prototype</span></header>
+  <main>
+    <p class="eyebrow">A calmer catalog import</p>
+    <h1>Find CSV problems.<br>Before the upload.</h1>
+    <p class="intro">Check file structure, repeated variant options and price formatting. Get a clear report with line numbers, ready for your review.</p>
+    <div class="facts"><span>Runs on your device</span><span>No account needed</span><span>Free evaluation</span></div>
+    <section class="checker" aria-labelledby="check-title">
+      <div class="section-label">01 / PREFLIGHT</div>
+      <h2 id="check-title">Choose your catalog file</h2>
+      <p>UTF-8 CSV · up to 2 MiB, 10,000 records and 100 columns. Your file stays in this browser. Reports omit headings and cell values.</p>
+      <label for="profile">Checks to run</label>
+      <select id="profile"><option value="shopify">Shopify catalog: limited structural checks</option><option value="generic">Generic CSV structure</option></select>
+      <label class="file-label" for="csv-file">Select a CSV from this device<input id="csv-file" type="file" accept=".csv,text/csv"></label>
+      <div class="actions"><button id="sample" class="secondary" type="button">Try a synthetic example</button><button id="reset" class="quiet" type="button">Clear file &amp; report</button></div>
+      <div id="result" class="result" hidden>
+        <h3 id="summary" role="status" aria-live="polite"></h3>
+        <ul id="issues"></ul>
+        <button id="download" type="button" disabled>Download JSON report</button>
+      </div>
+    </section>
+    <section class="notes" aria-labelledby="scope-title">
+      <div class="section-label">02 / WHAT THIS CHECKS</div>
+      <h2 id="scope-title">A useful first pass</h2>
+      <div class="columns"><p><strong>File structure</strong><br>Quoted fields, uneven records, duplicate or empty headings, and formula-like values.</p><p><strong>Catalog hints</strong><br>Current and legacy Shopify heading aliases, repeated SKUs, variant option collisions and price strings.</p></div>
+      <p class="scope">This is a limited preflight. A clean report does not guarantee import success. Store state, API validation, inventory locations, images and the full platform schema require separate checks. Repeated SKUs and formula-like text can be intentional. Keep a backup and review every finding before changing store data.</p>
+      <p class="references">Format references: <a href="https://help.shopify.com/en/manual/products/import-export/using-csv" rel="noopener noreferrer">Shopify CSV guide</a> · <a href="https://help.shopify.com/en/manual/products/import-export/common-import-issues" rel="noopener noreferrer">Common import errors</a></p>
+    </section>
+  </main>
+  <footer>Venture CEO · AI-assisted research prototype. No purchases or orders are available.<br><a href="review-notice.html">Privacy, terms &amp; support readiness</a></footer>
+</body>
+</html>

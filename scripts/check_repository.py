@@ -22,6 +22,7 @@ PRIVATE_DIRS = {".tools", ".tmp", ".venv", "data", "runtime", "private", "backup
 
 def main() -> int:
     names = subprocess.check_output(["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"], cwd=ROOT)
+    staged_names = set(subprocess.check_output(["git", "ls-files", "--cached", "-z"], cwd=ROOT).decode("utf-8").split("\0"))
     problems, count = [], 0
     for name in sorted(set(names.decode("utf-8").split("\0")) - {""}):
         path = ROOT / name
@@ -37,9 +38,12 @@ def main() -> int:
         if path.stat().st_size > 500_000:
             problems.append((name, "unexpected large file; manual inspection required"))
             continue
-        raw = path.read_bytes()
-        if any(rule.search(raw) for rule in RULES):
-            problems.append((name, "credential-like content; value withheld"))
+        versions = [("working file", path.read_bytes())]
+        if name in staged_names:
+            versions.append(("Git index", subprocess.check_output(["git", "show", ":" + name], cwd=ROOT)))
+        for version, raw in versions:
+            if any(rule.search(raw) for rule in RULES):
+                problems.append((name, f"credential-like content in {version}; value withheld"))
         count += 1
     for name, reason in problems:
         print(f"BLOCKED: {name}: {reason}")
