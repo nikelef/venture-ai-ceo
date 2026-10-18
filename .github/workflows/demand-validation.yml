@@ -1,0 +1,60 @@
+name: Demand validation checks and evidence
+
+"on":
+  workflow_dispatch:
+  schedule:
+    - cron: '41 5 * * *'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: venture-demand-validation
+  cancel-in-progress: false
+
+jobs:
+  validation:
+    if: github.repository == 'nikelef/venture-ai-ceo' && github.ref == 'refs/heads/main' && vars.VENTURE_GITHUB_ZERO_SPEND_CONFIRMED == 'true' && vars.VENTURE_SHUTDOWN != 'true' && (github.event_name == 'workflow_dispatch' || vars.VENTURE_VALIDATION_ENABLED == 'true')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    env:
+      ZERO_SPEND_CONFIRMED: ${{ vars.VENTURE_GITHUB_ZERO_SPEND_CONFIRMED }}
+      SHUTDOWN: ${{ vars.VENTURE_SHUTDOWN || 'false' }}
+    steps:
+      - name: Check out this private trusted project
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Set up Python
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: '3.12'
+      - name: Verify provenance and execution ceiling
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python -m scripts.validation_guard
+      - name: Check product, privacy gates and evidence decisions
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          python -m unittest discover -s tests -v
+          node --test tests/catalog.test.cjs tests/demand.test.mjs
+          python scripts/check_repository.py
+          npm ci --prefix collector --ignore-scripts --no-fund --no-audit
+          npm audit --prefix collector --omit=dev --audit-level=high
+          npm --prefix collector run build
+      - name: Read aggregate evidence and apply retention
+        if: vars.VENTURE_VALIDATION_ENABLED == 'true'
+        env:
+          VALIDATION_SUMMARY_URL: ${{ vars.VENTURE_VALIDATION_SUMMARY_URL }}
+          VALIDATION_READ_KEY: ${{ secrets.VENTURE_VALIDATION_READ_KEY }}
+        run: python -m ai_ceo.validation
+      - name: Retain aggregate evidence only
+        if: success() && vars.VENTURE_VALIDATION_ENABLED == 'true'
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: demand-validation-summary
+          path: runtime/validation-artifact/summary.json
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 9
