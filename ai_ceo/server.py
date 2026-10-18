@@ -15,6 +15,9 @@ CONTENT_TYPES = {"index.html": "text/html; charset=utf-8", "review-notice.html":
                  "catalog.js": "text/javascript; charset=utf-8", "app.js": "text/javascript; charset=utf-8",
                  "style.css": "text/css; charset=utf-8", "robots.txt": "text/plain; charset=utf-8",
                  "health.json": "application/json"}
+CONTENT_TYPES.update({"demand.js": "text/javascript; charset=utf-8", "experiment-config.js": "text/javascript; charset=utf-8",
+                      "shopify-csv-checklist.html": "text/html; charset=utf-8", "sitemap.xml": "application/xml; charset=utf-8"})
+CONTENT_TYPES["venturecatalogpreflight20261019.txt"] = "text/plain; charset=utf-8"
 CSP = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
 
 

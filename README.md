@@ -1,5 +1,7 @@
 # Venture CEO
 
+Current demand experiment: a free local Shopify CSV checker with a proposed **EUR 9 agency handoff pack**, a worked public import checklist, and a prepared consented evidence collector. **Purchasing is unavailable. Measurement and registration are paused** pending the operator privacy contact and native authorization for collector-only secrets in Neon. No demand or revenue has been demonstrated. See [validation operations](docs/DEMAND_VALIDATION.md) and [market evidence](research/MARKET_VALIDATION.md).
+
 A private, zero-outlay research pilot and a working browser-local catalog CSV evaluator. **The free evaluator is published and daily cloud research is enabled. No checkout, customer payment or revenue is active or verified.** Operating instructions remain in [MASTER_PROMPT.md](MASTER_PROMPT.md).
 
 App: **https://venture-ai-ceo-evaluator.onrender.com**. Source: [nikelef/venture-ai-ceo](https://github.com/nikelef/venture-ai-ceo), private, default branch `main`. Render in the approved NE workspace successfully cloned this private repository and automatically deploys source commits. The owner confirmed no payment method on Render and GitHub. No existing unrelated service or billing setting was modified.

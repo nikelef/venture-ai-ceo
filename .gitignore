@@ -65,5 +65,6 @@ payments/
 *transaction*.json
 .agents/
 .DS_Store
+node_modules/
 Thumbs.db
 !.env.example

@@ -8,6 +8,8 @@ const download = document.getElementById("download");
 let currentReport = null;
 let currentText = "";
 let generation = 0;
+let currentOrigin = "none";
+const action = name => window.dispatchEvent(new CustomEvent("catalog-action", {detail:name}));
 
 function display(text) {
   currentReport = null;
@@ -34,6 +36,7 @@ function display(text) {
       issueList.append(item);
     }
     download.disabled = false;
+    if (currentOrigin === "file" && currentReport.data_records > 0 && document.getElementById("real-catalog").checked) action("evaluation_complete");
   } catch (error) {
     summary.textContent = error instanceof CatalogPreflight.CsvError
       ? `Line ${error.line} · ${error.code}: ${error.message}` : "The file could not be checked. Try a smaller UTF-8 CSV.";
@@ -46,6 +49,8 @@ fileInput.addEventListener("change", async () => {
   currentText = ""; currentReport = null; download.disabled = true;
   issueList.replaceChildren(); result.hidden = false;
   if (!file) { result.hidden = true; return; }
+  currentOrigin = "file";
+  action("interaction");
   if (file.size > CatalogPreflight.LIMITS.bytes) { summary.textContent = "Choose a file no larger than 2 MiB."; return; }
   summary.textContent = "Reading the file on this device…";
   try {
@@ -59,17 +64,21 @@ fileInput.addEventListener("change", async () => {
 });
 profileInput.addEventListener("change", () => { if (currentText) display(currentText); });
 document.getElementById("sample").addEventListener("click", () => {
+  currentOrigin = "sample";
+  action("interaction"); action("sample");
   generation++; fileInput.value = "";
   currentText = "Handle,Title,Variant SKU,Variant Price,Option1 Value\nlinen-shirt,Linen shirt,SHIRT-M,29.00,Medium\nlinen-shirt,,SHIRT-M,EUR 29,Medium\n";
   profileInput.value = "shopify";
   display(currentText);
 });
 document.getElementById("reset").addEventListener("click", () => {
+  currentOrigin = "none";
   generation++; fileInput.value = ""; currentText = ""; currentReport = null;
   download.disabled = true; result.hidden = true; issueList.replaceChildren(); summary.textContent = "";
 });
 download.addEventListener("click", () => {
   if (!currentReport) return;
+  if (currentOrigin === "file" && document.getElementById("real-catalog").checked) action("report_download");
   const url = URL.createObjectURL(new Blob([JSON.stringify(currentReport, null, 2)], { type: "application/json" }));
   const link = document.createElement("a");
   link.href = url; link.download = "catalog-preflight-report.json"; link.click();

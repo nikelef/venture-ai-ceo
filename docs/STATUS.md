@@ -1,4 +1,12 @@
-# Current status — 2026-10-18
+# Current status — 2026-10-19 (owner local date)
+
+Demand validation now takes priority over product expansion. The current proposal is a **EUR 9 agency catalog handoff pack**, with the limited checker free and payments unavailable. Research found a direct free browser-only competitor; privacy alone is not differentiation. See [market evidence](../research/MARKET_VALIDATION.md).
+
+**Collection is blocked:** the owner must confirm the public controller/privacy contact, and automatic approval review rejected deploying generated collector-only secrets to Neon. The public measurement and registration controls are paused, with no collector endpoint configured. The dedicated free database has an empty schema; no public function was created and no customer evidence was collected. Prepared unit tests do not establish live integration. See [reviewable activation request](DEMAND_VALIDATION.md).
+
+The new `demand-validation.yml` workflow runs tests/build on manual dispatch. Daily aggregate reads at 05:41 UTC remain gated by `VENTURE_VALIDATION_ENABLED=false`; no personal data or secret has been placed in GitHub. Existing research automation below is preserved and is not a customer-demand measurement.
+
+## Earlier deployment and research status
 
 **The free evaluator is live and daily research automation is enabled. Sales remain disabled.**
 

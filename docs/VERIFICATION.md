@@ -1,4 +1,14 @@
-# Verification record — 2026-10-18
+# Verification record
+
+## Demand validation preparation — 2026-10-19 local date
+
+Local suite: **45 Python and 22 Node tests** passed. Added checks cover separate affirmative consent, origin and bot admission, bounded JSON, price/version validation, authenticated expiry, encryption, duplicate registration, private-receipt deletion, shutdown with QA separation, sample exclusion, no measurement on page load or scripted clicks, and conservative evidence decisions. Local Windows Node tests use `--test-isolation=none` because subprocess spawning is unavailable. The local preview serves only the explicitly allowed new guide, configuration, sitemap and verification assets.
+
+The dedicated PostgreSQL schema and restricted role were created and read back in the new Venture project only. No collector function was created: automatic approval review rejected its generated secret payload twice. Live registration, CORS, persistence and purge integration are **unverified** and collection stays paused. The native esbuild CLI bundled the source; local npm dependency audit was unavailable through the restricted network, so remote CI is required before activation. No simulated traffic counts as demand.
+
+Source scanning and public deployment verification are recorded with the final deployment check. See [validation operations](DEMAND_VALIDATION.md) for outstanding authorization and privacy contact gates.
+
+## Earlier verification — 2026-10-18
 
 ## Deployment and automation update
 

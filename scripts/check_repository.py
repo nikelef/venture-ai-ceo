@@ -17,7 +17,7 @@ RULES = [
     re.compile(rb"\bIBAN\s*[:=]\s*[\"']?[A-Z]{2}\d{2}[A-Z0-9]{10,}"),
 ]
 PRIVATE_DIRS = {".tools", ".tmp", ".venv", "data", "runtime", "private", "backups", "customers", "financial",
-                ".aws", ".codex", ".agents", "__pycache__", "logs", "output", "outputs"}
+                ".aws", ".codex", ".agents", "__pycache__", "logs", "output", "outputs", "node_modules", "dist", "build"}
 
 
 def main() -> int:

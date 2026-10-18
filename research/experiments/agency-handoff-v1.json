@@ -1,0 +1,31 @@
+{
+  "id": "agency-handoff-v1",
+  "prepared_at_local_date": "2026-10-19",
+  "status": "prepared_collection_blocked",
+  "hypothesis": "An agency with an upcoming Shopify catalog job values a clear, value-redacted handoff pack at EUR 9 per catalog.",
+  "price_cents": 900,
+  "currency": "EUR",
+  "free_pilot": "Voluntary request to use the current local checker and report, with optional feedback; no guaranteed place or paid order.",
+  "paid_purchasing_available": false,
+  "additional_spending_authorized_eur": 0,
+  "targets": {"genuine_relevant_visitors": 100, "completed_evaluations": 10, "qualified_voluntary_pilot_registrations": 5, "independent_potential_buyers_explicit_at_price": 3},
+  "measurement_window_days": 30,
+  "start_rule": "Record actual collection activation time after both blockers are resolved. Do not backdate an experiment start to deployment or preparation.",
+  "qualifying_pilot": "Voluntary separate consent, self-reported agency/merchant/catalog role, Shopify, real import within 30 days, pilot box checked; contact ownership and independent identity still require review.",
+  "genuine_visitor_rule": "Consented, visible, trusted-interaction sessions with 10 seconds active time and declared relevant role are candidates only. No fingerprinting. Repeat sessions, bots that mimic people and unverified relevance prevent a claim of verified unique people.",
+  "completed_evaluation_rule": "At most one per consented engaged relevant session, with local file, explicit real-catalog declaration and a generated report with at least one data record. Samples, failed reads, QA and unconsented activity are excluded.",
+  "independence_rule": "Distinct email hashes are not independent verified buyers. Review permissioned contact responses and actual business context; exclude owner, staff, AI/test accounts and duplicate businesses before marking independently_verified.",
+  "decision_policy": {
+    "continue_product_development": "Only after documented, credible independent demand; targets are provisional and do not establish product-market fit.",
+    "improve": "Qualified feedback shows interest but rejects price, proposition or missing handoff benefit; version the proposition before retest.",
+    "pivot": "Sufficient confirmed relevant exposure plus weak evaluated demand; record channel quality and test another hypothesis.",
+    "insufficient_exposure": "Distribution unresolved; do not declare demand disproven or manufacture traffic."
+  },
+  "sources": ["organic_search", "original_public_guide"],
+  "customer_evidence": [],
+  "verified_independent_willing_to_pay": 0,
+  "verified_unique_visitors": null,
+  "revenue_claim": "None; payments unavailable.",
+  "blockers": ["Public controller identity and usable privacy contact are pending owner input.", "Automatic approval review rejected sending generated collector-only secrets to the dedicated Neon deployment environment; explicit authorization for this destination/payload is required."],
+  "notifications": "Only credible demand, authorization decisions, material issues or operational blockers. Routine zero-demand results stay in private records."
+}

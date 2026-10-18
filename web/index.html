@@ -1,45 +1,69 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>Catalog Preflight — check your CSV before import</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="catalog.js" defer></script>
-  <script src="app.js" defer></script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Free Shopify CSV checks on your device. Find structural errors, repeated variants and price issues. Help test a proposed EUR 9 agency handoff pack. No purchases available.">
+<link rel="canonical" href="https://venture-ai-ceo-evaluator.onrender.com/">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Catalog Preflight — Shopify CSV checks &amp; agency handoff pilot</title>
+<link rel="stylesheet" href="style.css">
+<script src="catalog.js" defer></script><script src="app.js" defer></script><script src="experiment-config.js" defer></script><script src="demand.js" defer></script>
 </head>
 <body>
-  <header><a class="wordmark" href="index.html">Venture CEO<span> / tools</span></a><span class="badge">Research prototype</span></header>
-  <main>
-    <p class="eyebrow">A calmer catalog import</p>
-    <h1>Find CSV problems.<br>Before the upload.</h1>
-    <p class="intro">Check file structure, repeated variant options and price formatting. Get a clear report with line numbers, ready for your review.</p>
-    <div class="facts"><span>Runs on your device</span><span>No account needed</span><span>Free evaluation</span></div>
-    <section class="checker" aria-labelledby="check-title">
-      <div class="section-label">01 / PREFLIGHT</div>
-      <h2 id="check-title">Choose your catalog file</h2>
-      <p>UTF-8 CSV · up to 2 MiB, 10,000 records and 100 columns. Your file stays in this browser. Reports omit headings and cell values.</p>
-      <label for="profile">Checks to run</label>
-      <select id="profile"><option value="shopify">Shopify catalog: limited structural checks</option><option value="generic">Generic CSV structure</option></select>
-      <label class="file-label" for="csv-file">Select a CSV from this device<input id="csv-file" type="file" accept=".csv,text/csv"></label>
-      <div class="actions"><button id="sample" class="secondary" type="button">Try a synthetic example</button><button id="reset" class="quiet" type="button">Clear file &amp; report</button></div>
-      <div id="result" class="result" hidden>
-        <h3 id="summary" role="status" aria-live="polite"></h3>
-        <ul id="issues"></ul>
-        <button id="download" type="button" disabled>Download JSON report</button>
-      </div>
-    </section>
-    <section class="notes" aria-labelledby="scope-title">
-      <div class="section-label">02 / WHAT THIS CHECKS</div>
-      <h2 id="scope-title">A useful first pass</h2>
-      <div class="columns"><p><strong>File structure</strong><br>Quoted fields, uneven records, duplicate or empty headings, and formula-like values.</p><p><strong>Catalog hints</strong><br>Current and legacy Shopify heading aliases, repeated SKUs, variant option collisions and price strings.</p></div>
-      <p class="scope">This is a limited preflight. A clean report does not guarantee import success. Store state, API validation, inventory locations, images and the full platform schema require separate checks. Repeated SKUs and formula-like text can be intentional. Keep a backup and review every finding before changing store data.</p>
-      <p class="references">Format references: <a href="https://help.shopify.com/en/manual/products/import-export/using-csv" rel="noopener noreferrer">Shopify CSV guide</a> · <a href="https://help.shopify.com/en/manual/products/import-export/common-import-issues" rel="noopener noreferrer">Common import errors</a></p>
-    </section>
-  </main>
-  <footer>Venture CEO · AI-assisted research prototype. No purchases or orders are available.<br><a href="review-notice.html">Privacy, terms &amp; support readiness</a></footer>
+<header><a class="wordmark" href="index.html">Venture CEO<span> / tools</span></a><a href="shopify-csv-checklist.html">Import checklist</a><span class="badge">Free pilot · no checkout</span></header>
+<main>
+<p class="eyebrow">For Shopify agencies &amp; catalog teams</p>
+<h1>A clearer catalog handoff.<br>Before the import.</h1>
+<p class="intro">Find easy-to-miss CSV mistakes before handing a file to your client or store team. Check structure, repeated variant options and price formatting, with a report that leaves out product values.</p>
+<div class="facts"><span>Files stay on your device</span><span>No store connection</span><span>Free checker</span></div>
+<div class="actions hero-actions"><a class="button-link" href="#check-title">Check a CSV free</a><a href="#pilot-title">See the proposed €9 handoff pack</a></div>
+<aside class="consent-panel" aria-labelledby="measurement-title">
+<h2 id="measurement-title">Help us test whether this is useful?</h2>
+<p>Optional measurement counts this session and broad tool actions for 30 days. Our collector stores no CSV contents, filenames, IP addresses or full referrer URLs. The checker works if you decline. Hosting providers process request metadata. <a href="review-notice.html">Privacy &amp; deletion</a>.</p>
+<label for="visitor-role">Your role (only sent if you agree)</label><select id="visitor-role"><option value="">Choose a role</option><option value="agency">Agency / freelance migration specialist</option><option value="merchant">Merchant / store owner</option><option value="catalog">Catalog / ecommerce operations</option><option value="other">Exploring / other</option></select>
+<div class="actions"><button id="measurement-yes" type="button" disabled>Agree to optional measurement</button><button id="measurement-no" type="button" class="secondary">Continue without measurement</button><button id="measurement-forget" type="button" class="quiet" hidden>Stop &amp; delete this session</button></div>
+<p id="measurement-status" role="status" aria-live="polite">No optional measurement is running.</p>
+</aside>
+<section class="checker" aria-labelledby="check-title">
+<div class="section-label">01 / PREFLIGHT</div><h2 id="check-title">Choose your catalog file</h2>
+<p>UTF-8 CSV · up to 2 MiB, 10,000 records and 100 columns. Your file stays in this browser. Reports omit headings and cell values.</p>
+<label for="profile">Checks to run</label><select id="profile"><option value="shopify">Shopify catalog: limited structural checks</option><option value="generic">Generic CSV structure</option></select>
+<label class="check"><input id="real-catalog" type="checkbox"> This is a real catalog I am authorized to check, rather than a sample or test file. Optional: used only to distinguish evaluations if I consent to measurement.</label>
+<label class="file-label" for="csv-file">Select a CSV from this device<input id="csv-file" type="file" accept=".csv,text/csv"></label>
+<div class="actions"><button id="sample" class="secondary" type="button">Try a synthetic example</button><button id="reset" class="quiet" type="button">Clear file &amp; report</button></div>
+<div id="result" class="result" hidden><h3 id="summary" role="status" aria-live="polite"></h3><ul id="issues"></ul><button id="download" type="button" disabled>Download JSON report</button></div>
+</section>
+<section class="notes" aria-labelledby="scope-title">
+<div class="section-label">02 / WHAT THIS CHECKS</div><h2 id="scope-title">A useful first pass</h2>
+<div class="columns"><p><strong>File structure</strong><br>Quoted fields, uneven records, duplicate or empty headings, and formula-like values.</p><p><strong>Catalog hints</strong><br>Current and legacy Shopify heading aliases, repeated SKUs, variant option collisions and price strings.</p></div>
+<p class="scope">A clean report does not guarantee import success. Store state, API validation, inventory locations, images and the full platform schema require separate checks. Repeated SKUs and formula-like text can be intentional. This tool cannot predict deleted variants or provide a rollback. Keep a backup and test a small batch before changing a store.</p>
+<p><a href="shopify-csv-checklist.html">Read the worked import checklist</a> · <a href="https://help.shopify.com/en/manual/products/import-export/using-csv" rel="noopener noreferrer">Shopify CSV guide</a></p>
+</section>
+<section class="offer" aria-labelledby="pilot-title">
+<div class="section-label">03 / TEST THE HANDOFF</div><h2 id="pilot-title">Would a client-ready handoff be worth €9?</h2>
+<p class="price">€9 <span>proposed total price · one catalog · no subscription</span></p>
+<p>We are testing a handoff pack: a printable, row-number QA report, a prioritized correction checklist and a record of the checks performed. The goal is less back-and-forth when a client or teammate reviews a catalog. Time saved is a hypothesis we want you to test.</p>
+<p><strong>Today:</strong> the limited checker and JSON report are free. You can print current results using your browser. <strong>Proposed paid pack:</strong> improved presentation and handoff guidance, subject to pilot feedback. <strong>Paid purchasing is not currently available.</strong> No payment details are collected. Registration creates no order or obligation.</p>
+<p>The optional free pilot uses your own catalog locally and the current free report. Request an invitation below; participation is voluntary and places are not guaranteed. This is an AI-operated project, independent of Shopify.</p>
+<form id="interest-form">
+<h3>Expression of interest — not a purchase</h3>
+<label for="work-email">Work email</label><input id="work-email" type="email" maxlength="254" autocomplete="email" required>
+<p class="hint">Only for a response about this pilot or your feedback. No newsletter, resale or unsolicited marketing. Contact is encrypted in our research database and deleted within 30 days.</p>
+<label for="interest-role">Your role</label><select id="interest-role" required><option value="">Choose</option><option value="agency">Agency / freelance migration specialist</option><option value="merchant">Merchant / store owner</option><option value="catalog">Catalog / ecommerce operations</option><option value="other">Exploring / other</option></select>
+<label for="interest-platform">Platform</label><select id="interest-platform" required><option value="">Choose</option><option value="shopify">Shopify</option><option value="other">Other</option></select>
+<label for="interest-timing">When is your next real catalog import or update?</label><select id="interest-timing" required><option value="">Choose</option><option value="30days">Within 30 days</option><option value="later">Later</option><option value="none">No planned import</option></select>
+<label for="interest-problem">Main problem you want to solve</label><select id="interest-problem" required><option value="">Choose</option><option value="structure">CSV structure / formatting</option><option value="variants">Repeated variant combinations</option><option value="prices">Price formatting</option><option value="handoff">Explaining findings to a client or team</option><option value="other">Other / not sure</option></select>
+<label for="interest-willingness">Would you pay the proposed €9 total for one handoff pack if it meets the description?</label><select id="interest-willingness" required><option value="">Choose — no answer is preselected</option><option value="yes">Yes, I would pay €9 for one pack</option><option value="no">No, I would not pay €9</option><option value="unsure">I need to try it first / unsure</option></select>
+<label class="check"><input id="interest-pilot" type="checkbox"> I would also like to request an optional free pilot.</label>
+<label class="check"><input id="interest-consent" type="checkbox" required> I am 18 or older and agree to the processing of my email and answers for this validation experiment, including a response about my pilot or feedback. I have read the <a href="review-notice.html">privacy notice</a>. I can withdraw at any time using my receipt below.</label>
+<div class="trap" aria-hidden="true"><label for="interest-website">Leave blank</label><input id="interest-website" type="text" tabindex="-1" autocomplete="off"></div>
+<button id="interest-submit" type="submit" disabled>Register voluntary interest</button><p id="interest-status" role="status" aria-live="polite"></p>
+</form>
+<div id="receipt-panel" hidden><h3>Keep your private receipt</h3><p>Your email has not been verified. This confirms a saved form, not a sale or a confirmed pilot place. Save the receipt privately to delete your registration.</p><output id="receipt"></output><button id="receipt-download" type="button" class="secondary">Save receipt privately</button></div>
+<details><summary>Withdraw an expression of interest</summary><label for="withdraw-receipt">Paste your private receipt (not your email)</label><input id="withdraw-receipt" type="text" autocomplete="off" maxlength="43"><button id="withdraw" type="button" class="secondary">Delete my registration</button><p id="withdraw-status" role="status"></p></details>
+</section>
+</main>
+<footer>Venture CEO · AI-operated demand experiment. No purchases or orders are available.<br><a href="review-notice.html">Privacy, terms &amp; deletion</a> · <a href="shopify-csv-checklist.html">Shopify CSV import checklist</a></footer>
 </body>
 </html>

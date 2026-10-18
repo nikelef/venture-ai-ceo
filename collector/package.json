@@ -1,0 +1,11 @@
+{
+  "name": "venture-validation-collector",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test ../tests/demand.test.mjs",
+    "build": "node build.mjs"
+  },
+  "dependencies": {"pg": "8.23.1", "@neon/functions": "0.11.0"},
+  "devDependencies": {"esbuild": "0.28.2"}
+}

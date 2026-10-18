@@ -23,7 +23,8 @@ class PreviewTests(unittest.TestCase):
         cls.thread.join(timeout=3)
 
     def test_evaluator_assets_and_health_are_served_with_security_headers(self):
-        for route in ("/", "/catalog.js", "/app.js", "/style.css", "/review-notice.html", "/robots.txt", "/healthz"):
+        for route in ("/", "/catalog.js", "/app.js", "/style.css", "/review-notice.html", "/robots.txt", "/healthz",
+                      "/demand.js", "/experiment-config.js", "/shopify-csv-checklist.html", "/sitemap.xml", "/venturecatalogpreflight20261019.txt"):
             with self.subTest(route=route), urllib.request.urlopen(self.base + route, timeout=3) as response:
                 self.assertEqual(response.status, 200)
                 self.assertIn("connect-src 'none'", response.headers["Content-Security-Policy"])

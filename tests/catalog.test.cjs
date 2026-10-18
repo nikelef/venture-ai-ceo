@@ -55,10 +55,13 @@ test("findings are bounded and counts still cover all rows", () => {
   assert.equal(report.findings_truncated, true);
   assert.ok(report.warnings >= 2000);
 });
-test("browser UI renders diagnostics as text and has no outbound data primitives", () => {
+test("catalog code keeps file content local; page permits only the consented collector", () => {
   const app = readFileSync(require.resolve("../web/app.js"), "utf8");
   assert.ok(!/innerHTML|outerHTML|insertAdjacentHTML|eval\s*\(|new Function|fetch\s*\(|XMLHttpRequest|sendBeacon|WebSocket|localStorage|sessionStorage/.test(app));
   const html = readFileSync(require.resolve("../web/index.html"), "utf8");
-  assert.ok(html.includes("connect-src 'none'"));
-  assert.ok(!/<form\b|checkout\.stripe|<iframe\b/.test(html));
+  const config = readFileSync(require.resolve("../web/experiment-config.js"), "utf8");
+  if (config.includes('endpoint:""')) assert.ok(html.includes("connect-src 'none'"));
+  else assert.match(html, /connect-src https:\/\/[a-z0-9.-]+\.aws\.neon\.tech;/);
+  assert.ok(html.includes("form-action 'none'"));
+  assert.ok(!/checkout\.stripe|<iframe\b/.test(html));
 });
