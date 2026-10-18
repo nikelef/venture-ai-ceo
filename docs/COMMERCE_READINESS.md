@@ -1,6 +1,6 @@
 # Commerce implementation and blocked activation
 
-No live checkout, orders, captured payments, refunds, payouts or revenue exist. The evaluator is local and free. There is no public webhook endpoint. `PAYMENTS_ENABLED=true` stops the pilot rather than enabling commerce. API keys cannot override the permission engine. No owner notification has been sent.
+No live checkout, orders, captured payments, refunds, payouts or revenue exist. The evaluator is hosted free and processes CSV files locally in the browser. Daily cloud research does not enable commerce. There is no public webhook endpoint. `PAYMENTS_ENABLED=true` stops the pilot rather than enabling commerce. API keys cannot override the permission engine. No owner notification has been sent.
 
 ## Implemented and exercised locally
 

@@ -1,32 +1,31 @@
-# Project status — 2026-10-18
+# Current status — 2026-10-18
 
-## Completed and externally verified
+**The free evaluator is live and daily research automation is enabled. Sales remain disabled.**
 
-- Git 2.53.0 and official GitHub CLI 2.102.0 checked. CLI downloaded from the official `cli/cli` release; its published SHA-256 checksum matched. Native GitHub device authorization completed as `nikelef`; credentials are in the OS keyring, not this repository.
-- Created the new separate repository `nikelef/venture-ai-ceo` with `--private`. Initialized only this dedicated project directory, connected the exact remote, committed safe files and pushed `main` without force. GitHub independently reported private ownership/default branch and the same uploaded/local commit. No unrelated Git repository was changed.
-- Protective ignores and credential-pattern scans exclude runtime state, customer/financial data, credentials, local tools and backups. Only source, synthetic tests, public-source summaries and readiness documents belong in the committed tree.
-- Read-only Render access verified in owner-approved workspace NE. No service, billing setting, environment, domain or deployment changed. In particular, Maritime-Carbon is untouched.
+- App: https://venture-ai-ceo-evaluator.onrender.com
+- Private source: https://github.com/nikelef/venture-ai-ceo (`main`)
+- Cloud research: https://github.com/nikelef/venture-ai-ceo/actions/workflows/research.yml
+- Schedule: daily at **05:23 UTC**, with GitHub's best-effort scheduling semantics.
 
-## Implemented and locally exercised
+## Verified work
 
-- Ten opportunities with dated provenance, weighted scoring, counterarguments, assumptions and two alternates. Selected Catalog Preflight at 75/100; the score is judgment, not measured demand. No customer or willingness-to-pay evidence exists.
-- Zero-outlay offline research run, optional public-feed refresh, verifiable local audit, backups, limits, failure circuit breaker, local health check and bounded scheduler. A successful live refresh collected 18 signals from three allowlisted feeds. One earlier refresh failed transiently and remains in the audit; it was not rewritten as success.
-- Functional local CSV evaluator with value-free diagnostics, bounded parsing and no uploads or outbound data requests. Loopback HTTP tests verify public assets, private-path denial and disabled checkout/webhook/upload routes.
-- Synthetic commerce-only components: raw-body signature verification, separate test order/event ledger, unpaid/live rejection, deduplication, integrity-checked idempotent local fulfillment and per-currency accounting exercises. These are not live integrations or real orders/revenue.
-- Prepared single-service Render static Blueprint, validated against the current public JSON schema. No paid resources, automatic deployments, cloud timers or private-repository Actions jobs were enabled.
+The mandatory private repository bootstrap was completed and independently checked. Render's existing GitHub integration successfully cloned the new private repository. A new static site reached `live`; HTTPS assets matched the committed source, private repository/runtime paths returned 404, and later commits automatically deployed. No unrelated repository or Render service was changed.
 
-## Blockers and precise continuation
+The owner confirmed no payment method on **both** Render and GitHub and authorized free hosting/automation. Current platform documentation describes usage blocking at free allowances without a payment method. These are owner-confirmed billing facts, not independently inspected payment records. EUR 0 operating authority remains unchanged; no paid compute, cron, database, domain, API, subscription or account upgrade was enabled.
 
-| Prerequisite | Current evidence | Next permitted action |
-|---|---|---|
-| Zero-charge cloud hosting | Render documents possible bandwidth/build overages; connector cannot verify account-level hard safeguards | Verify a true zero-charge arrangement through Render's secure billing portal; do not change shared billing or incur charges |
-| Private-repository linkage | Account access works; Render's App access to the new repository has not been tested | If needed, complete the native Render/GitHub consent for this repository only after deployment prerequisites are satisfied |
-| Public identity/privacy/support | Operator and hosting details and monitored support are unconfigured; notices are drafts | Finish secure business setup and applicable review before publishing a storefront |
-| Durable cloud schedule/state | No scheduler executions, persistent database, remote backup or external immutable anchor exist | Select only an actually authorized zero-cost option, or wait for a separately approved budget; verify executions, restore and logs |
-| Payment account and seller/tax setup | No licensed-provider onboarding or credentials configured | Owner completes identity/tax/payout setup only in the provider's secure portal; no financial account/contract is created by this agent |
-| Live checkout and delivery | Runtime permission denies commerce; no transport, live endpoint, delivery/support or refund path exists | After approval/readiness, implement and verify provider requests, signed endpoints, independent retrieval, customer access, refunds/disputes and accounting |
-| Live LLM provider | No API calls authorized at EUR 0 and no live compatibility verified | Use the credential-free pilot; review any later budget/provider permission separately |
-| Demand | Public documentation and competitor offers only | Use lawful permitted distribution and opt-in validation after publishing prerequisites; no unsolicited contacts |
-| Browser QA | No browser-control surface available | Perform visual/interactive QA when a permitted browser surface is available; unit and local HTTP tests are already available |
+The cloud implementation passed **38 Python tests and 10 Node tests**. Two actual GitHub-hosted runs completed successfully: [initial execution](https://github.com/nikelef/venture-ai-ceo/actions/runs/39160638894) and [restore execution](https://github.com/nikelef/venture-ai-ceo/actions/runs/39160738590). The second restored the first's checked state after bootstrap authority was disabled. Audit history grew from 9 to 18 events and research history from one to two runs. Each retrieved 18 public-feed signals. State/report hashes and SQLite integrity were independently checked from downloaded private artifacts.
 
-These blockers are documented without inventing activation or delegating repository creation to the owner. Native account authorization is the only GitHub setup step the owner performed. The full business mission remains incomplete. There is no unattended cloud operation, sale, net revenue or normal owner notification to report. Authorized incremental operating spend remains EUR 0; cost statements exclude any existing laptop/internet or this Codex session's billing.
+The daily trigger is configured and active. The observed executions were manual cloud dispatches using the same job; the first actual scheduled firing is still a future event at this checkpoint. No always-on agent, paid LLM or revenue process is implied. The pilot replays ten dated candidate reviews and refreshes public news signals; it does not autonomously invent fresh demand or validate buyers.
+
+## Remaining commercial prerequisites
+
+| Area | Remaining work |
+|---|---|
+| Demand | Public documentation/competitor offers exist; no observed customers, interviews or willingness to pay. Use permitted distribution and voluntary feedback before a paid offer. |
+| Seller, tax and legal setup | Complete lawful seller identity, support channel and applicable review; commercial templates remain drafts. |
+| Payments and fulfillment | No live checkout transport, provider onboarding, public webhook, customer delivery/refund path or real reconciliation is active. Tests use synthetic data only. |
+| LLM provider | No paid calls authorized at EUR 0 and no live provider compatibility verified. The pilot works without one. |
+| Durable commerce infrastructure | Seven-day private research artifacts are suitable for this bounded pilot, not a production order ledger or indefinite regulated record retention. Cloud database/restore/immutable-retention design needs a separate readiness review. |
+| Browser QA | HTTP/source behavior and parsing are tested; interactive visual browser inspection was unavailable. |
+
+Use [cloud automation](CLOUD_AUTOMATION.md) for state retention, failure recovery and shutdown. Verified payment count remains zero. A published evaluator and a working cloud research job are not proof of a commercial launch or revenue.

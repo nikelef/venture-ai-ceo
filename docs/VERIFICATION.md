@@ -1,5 +1,13 @@
 # Verification record — 2026-10-18
 
+## Deployment and automation update
+
+The evaluator is now live at https://venture-ai-ceo-evaluator.onrender.com. Render successfully cloned the private repository and completed automatic source-commit deployments. HTTPS assets matched source hashes, private files returned 404, and `/health.json` reports disabled payment/upload/model requests. Read [deployment evidence](DEPLOYMENT.md) for the service and deploy IDs.
+
+The owner confirmed no payment methods on Render and GitHub and authorized free deployment/automation. The current suite passes **38 Python tests and 10 Node tests**, including cloud state provenance, bounded ZIP restoration, persistent run limits, billing/context guards and real snapshot recovery. Two actual hosted executions succeeded: [initial run](https://github.com/nikelef/venture-ai-ceo/actions/runs/39160638894) and [restore run](https://github.com/nikelef/venture-ai-ceo/actions/runs/39160738590). Private snapshots were downloaded and independently checked; history grew from one to two research runs and nine to eighteen audit events, with 18 feed signals each. The one-time bootstrap flag is now false. The daily 05:23 UTC schedule is active; its future firing is not yet observed. See [cloud verification](CLOUD_AUTOMATION.md).
+
+The following sections preserve the **earlier pre-deployment bootstrap checkpoint**. Their inactive-cloud statements describe that earlier state, superseded by the evidence above.
+
 ## Repository bootstrap
 
 GitHub CLI authenticated as `nikelef` via native device authorization with credentials in the OS keyring. The new repository was created private and pushed on `main`. Independent `gh repo view` returned `nameWithOwner: nikelef/venture-ai-ceo`, `isPrivate: true` and default branch `main`. The initial remote commit and local HEAD both matched `ae6f411562f098c72957440cbdd34f363f8ade23`. The remote tree contained only intended source/configuration/tests/research. No force push, visibility change or unrelated repository change occurred. The final source revision is verified again after upload rather than assuming that a local commit was pushed.
