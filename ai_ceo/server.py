@@ -13,7 +13,8 @@ from ai_ceo.policy import Action, PolicyDenied, authorize
 WEB = Path(__file__).resolve().parent.parent / "web"
 CONTENT_TYPES = {"index.html": "text/html; charset=utf-8", "review-notice.html": "text/html; charset=utf-8",
                  "catalog.js": "text/javascript; charset=utf-8", "app.js": "text/javascript; charset=utf-8",
-                 "style.css": "text/css; charset=utf-8", "robots.txt": "text/plain; charset=utf-8"}
+                 "style.css": "text/css; charset=utf-8", "robots.txt": "text/plain; charset=utf-8",
+                 "health.json": "application/json"}
 CSP = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
 
 

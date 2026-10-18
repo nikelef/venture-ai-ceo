@@ -1,13 +1,12 @@
-# Prepared configuration only. DO NOT APPLY until EUR 0 usage safeguards,
-# private-repository access and the operator/privacy notice are verified.
-# Static hosting still has bandwidth and build overage risks.
+# Static evaluator. Owner confirmed no Render payment method and authorized
+# publication. Quota exhaustion must stop usage; never upgrade automatically.
 services:
   - type: web
     name: venture-ai-ceo-evaluator
     runtime: static
     repo: https://github.com/nikelef/venture-ai-ceo
     branch: main
-    autoDeployTrigger: 'off'
+    autoDeployTrigger: commit
     buildCommand: node --test tests/catalog.test.cjs
     staticPublishPath: ./web
     envVars:
