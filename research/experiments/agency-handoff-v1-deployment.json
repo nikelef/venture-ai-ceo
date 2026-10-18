@@ -110,5 +110,12 @@
   "customer_evidence": [],
   "actual_collected_registrations": 0,
   "verified_willing_to_pay": 0,
-  "payments_enabled": false
+  "payments_enabled": false,
+  "latest_collector_preparation_checks": {
+    "run_id": 39169725770,
+    "source_commit": "434c63f1e6c2b3426ed7418fb1460e512fdd1bcd",
+    "conclusion": "success",
+    "finished_at_utc": "2026-10-18T21:52:30Z",
+    "collection_steps": "skipped; not enabled"
+  }
 }

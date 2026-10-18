@@ -23,7 +23,7 @@ No additional Render web service was created. Maritime-Carbon uses a free instan
 
 ## Activation blockers and concrete owner decision
 
-1. Supply the operator name and usable public privacy contact authorized for publication. The GitHub public profile currently supplies `Nikitas8` and no public email. GDPR Article 13 requires controller identity/contact information. Consent must identify who receives the data; do not invent a company or publish inferred personal details. Owner input requested while independent work continued.
+1. Supply the operator name and usable public privacy contact authorized for publication. The GitHub public profile currently supplies `Nikitas8` and no public email. [GDPR Article 13](https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng) requires controller identity/contact information. Consent must identify who receives the data; do not invent a company or publish inferred personal details. Owner input requested while independent work continued.
 2. Automatic approval review rejected the Neon function deployment, stating that transmitting a database password, encryption key and access keys to Neon needs explicit authorization for that sensitive destination/payload. The retry after least-privilege and official deployment-environment verification was also rejected. **Do not retry, change tools or use automatically injected privileged credentials to bypass the rejection.**
 
 The reviewable request is to deploy this isolated, initially paused function to the connected **Neon Free** project/branch above and put newly generated, collector-only values into Neon's documented deployment environment:
