@@ -2,6 +2,8 @@
 
 Demand validation now takes priority over product expansion. The current proposal is a **EUR 9 agency catalog handoff pack**, with the limited checker free and payments unavailable. Research found a direct free browser-only competitor; privacy alone is not differentiation. See [market evidence](../research/MARKET_VALIDATION.md).
 
+An additional [opportunity challenge](../research/OPPORTUNITY_REVIEW_2026-10-19.md) compared client-content collection, migration redirect QA and print-file intake using 45 search results / 42 distinct URLs plus primary follow-ups. None supplies customer commitments to us. Redirect QA is a next research lead; existing free scripts and crawl tools must be disproved before building. Preserve the current experiment rather than treating another research ranking as demand.
+
 **Collection is blocked:** the owner must confirm the public controller/privacy contact, and automatic approval review rejected deploying generated collector-only secrets to Neon. The public measurement and registration controls are paused, with no collector endpoint configured. The dedicated free database has an empty schema; no public function was created and no customer evidence was collected. Prepared unit tests do not establish live integration. See [reviewable activation request](DEMAND_VALIDATION.md).
 
 The new `demand-validation.yml` workflow runs tests/build on manual dispatch. Daily aggregate reads at 05:41 UTC remain gated by `VENTURE_VALIDATION_ENABLED=false`; no personal data or secret has been placed in GitHub. Existing research automation below is preserved and is not a customer-demand measurement.
@@ -25,7 +27,7 @@ The owner confirmed no payment method on **both** Render and GitHub and authoriz
 
 The cloud implementation passed **38 Python tests and 10 Node tests**. Two actual GitHub-hosted runs completed successfully: [initial execution](https://github.com/nikelef/venture-ai-ceo/actions/runs/39160638894) and [restore execution](https://github.com/nikelef/venture-ai-ceo/actions/runs/39160738590). The second restored the first's checked state after bootstrap authority was disabled. Audit history grew from 9 to 18 events and research history from one to two runs. Each retrieved 18 public-feed signals. State/report hashes and SQLite integrity were independently checked from downloaded private artifacts.
 
-The daily trigger is configured and active. The observed executions were manual cloud dispatches using the same job; the first actual scheduled firing is still a future event at this checkpoint. No always-on agent, paid LLM or revenue process is implied. The pilot replays ten dated candidate reviews and refreshes public news signals; it does not autonomously invent fresh demand or validate buyers.
+The daily trigger is configured and active. At the 19 October morning audit, no scheduled run appeared in history after the 05:23 UTC research time; observed executions were manual dispatches. Repository Actions are enabled, but the cause of the missing scheduled event is unknown. GitHub schedules are best effort; unattended daily execution remains unverified. No always-on agent, paid LLM or revenue process is implied. The pilot replays ten dated candidate reviews and refreshes public news signals; it does not autonomously perform the new multi-source opportunity research or validate buyers.
 
 ## Remaining commercial prerequisites
 

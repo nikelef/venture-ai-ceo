@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "review_date": "2026-10-19",
+  "experiment": "agency-handoff-v1",
+  "purpose": "Independent opportunity challenge; research sources are not customer evidence",
+  "searches": 9,
+  "result_slots_requested": 45,
+  "results_returned": 45,
+  "unique_result_urls": 42,
+  "direct_fetch_requests": 14,
+  "unique_fetched_urls": 12,
+  "authorized_incremental_spend_eur": 0,
+  "payments_enabled": false,
+  "customer_collection_enabled": false,
+  "verified_unique_visitors": null,
+  "qualified_pilot_registrations": 0,
+  "independently_verified_willing_to_pay": 0,
+  "decision": "Preserve the existing free experiment. No new product or pivot is justified by this scan.",
+  "next_research_lead": "Compare stakeholder-ready redirect migration QA against free scripts and existing crawl reports.",
+  "report": "../OPPORTUNITY_REVIEW_2026-10-19.md",
+  "sources": [
+    {
+      "title": "James Rose: The #1 Bottleneck Killing Agency Projects (and How to Fix It)",
+      "url": "https://dynamicagencyos.com/podcast/james-rose-the-1-bottleneck-killing-agency-projects-and-how-to-fix-it",
+      "published": "2025-02-11T11:00:00.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "How to Get Content From Your Clients",
+      "url": "https://kcwebdesigner.com/getting-client-website-content/",
+      "published": "2018-12-28T14:02:18.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "N/A",
+      "url": "https://contentsnare.com/success-stories/huga/",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "How this web design agency boosted their productivity and cut down content collection delays",
+      "url": "https://contentsnare.com/success-stories/lighthouse-graphics/",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Automating Your Agency and Managing Client Approvals with Jimmy Rose of Content Snare - Agency Journey | ZenPilot",
+      "url": "https://www.zenpilot.com/agency-journey/automating-your-agency-and-managing-client-approvals-with-jimmy-rose/",
+      "published": "2021-01-10T00:00:00.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "How Excite Media turned their content collection headache into a stress-free experience",
+      "url": "https://contentsnare.com/success-stories/excite-media/",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "N/A",
+      "url": "https://robotostudio.com/blog/the-pre-launch-essentials-checklist-for-cms-migrations",
+      "published": "2023-02-03T00:00:00.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "How to speed up site migrations with AI-powered redirect mapping",
+      "url": "https://searchengineland.com/site-migrations-ai-powered-redirect-mapping-437793",
+      "published": "2024-02-23T15:00:00.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Shopify Plus Agency Automates 27,000 Redirects",
+      "url": "https://www.wislr.com/case-studies/shopify-plus-agency-automates-27000-redirects/",
+      "published": "2025-02-24T05:00:00.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Post-Redirect Checker - Jonathan Dell'Agnolo",
+      "url": "https://jonathandellagnolo.com/work/post-redirect-checker/",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Webinar: Website Migrations & Redirect Mapping Dos & Don'ts",
+      "url": "https://sitebulb.com/resources/guides/webinar-website-migrations-redirect-mapping-dos-donts/",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Automated Redirect Maps for Site Migration",
+      "url": "https://portalredirect.co.uk/from-manual-spreadsheets-to-automated-redirect-maps-a-smarte",
+      "published": "2026-04-14T21:19:15.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Customer supplied PDF files | PrintPlanet.com",
+      "url": "https://printplanet.com/threads/customer-supplied-pdf-files.10374/",
+      "published": "2010-07-21T15:37:43.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Suggestions on automating preflighting customer supplied art files - Enfocus Community",
+      "url": "https://forum.enfocus.com/viewtopic.php?t=5023",
+      "published": "2024-05-13T08:08:43.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Customer file submission | PrintPlanet.com",
+      "url": "https://printplanet.com/threads/customer-file-submission.292404/",
+      "published": "2022-06-29T15:08:12.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "We don't preflight check | PrintPlanet.com",
+      "url": "https://printplanet.com/threads/we-dont-preflight-check.250017/",
+      "published": "2015-12-15T00:06:44.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Online Preflighting Service/Server | PrintPlanet.com",
+      "url": "https://printplanet.com/threads/online-preflighting-service-server.267554/",
+      "published": "2017-07-29T12:32:41.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Client Provided Files | Signs101.com: Largest Forum for Signmaking Professionals",
+      "url": "https://www.signs101.com/threads/client-provided-files.131216/",
+      "published": "2016-03-23T12:36:26.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Best Way To Gather Content From Clients? | Warrior Forum - The #1 Digital Marketing Forum & Marketplace",
+      "url": "https://www.warriorforum.com/website-design/1039980-best-way-gather-content-clients.html",
+      "published": "2015-01-24T12:54:34.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "How to gather content for a website (without endless emails)",
+      "url": "https://contentsnare.com/gather-content-website/",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "A Guide to Collecting Website Content from Clients - JoshHall.co",
+      "url": "https://joshhall.co/how-to-collect-content-from-web-design-clients/",
+      "published": "2024-07-12T02:21:46.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "How to Collect Website Content From Clients Without Follow-Ups",
+      "url": "https://toolmaphq.com/collect-website-content-from-clients/",
+      "published": "2026-09-28T19:39:54.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "How to Get Website Content From Clients - Agency Mavericks",
+      "url": "https://www.agencymavericks.com/a-guide-to-collecting-content-from-clients-effortlessly/",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Stop Chasing Clients for Website Content: A Practical Intake Workflow - DEV Community",
+      "url": "https://dev.to/digital_c680616c89b2f3272/stop-chasing-clients-for-website-content-a-practical-intake-workflow-1549",
+      "published": "2026-10-16T13:35:37.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "How to Build a Free Redirect Mapping Tool (with Python)",
+      "url": "https://www.lupagedigital.com/blog/redirect-mapping-tool/",
+      "published": "2025-02-13T10:03:41.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Legacy URL redirects ～ We Sort.",
+      "url": "https://wesort.co.uk/explore/posts/legacy-url-redirects",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Website Migration Redirects: The Mistake We See Every Time | SEO Empire",
+      "url": "https://www.seoempire.com.au/website-migration-redirects-common-mistake/",
+      "published": "2026-07-29T08:26:06.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Redirect Map for Large Site Migrations (20K URLs)",
+      "url": "https://gautamkhorana.com/blog/redirect-map-large-site-migration/",
+      "published": "2026-05-02T12:44:16.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Preflight is a NEED for large-scale print businesses. | PrintPlanet.com",
+      "url": "https://printplanet.com/threads/preflight-is-a-need-for-large-scale-print-businesses.294895/",
+      "published": "2025-03-28T06:16:10.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "How are you handling variable bleed and substrate presets for large format without a human double-checking every file? | PrintPlanet.com",
+      "url": "https://printplanet.com/threads/how-are-you-handling-variable-bleed-and-substrate-presets-for-large-format-without-a-human-double-checking-every-file.295789/",
+      "published": "2026-08-25T10:12:35.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Preflight and fix large volume pdf's - Books Digital - print | PrintPlanet.com",
+      "url": "https://printplanet.com/threads/preflight-and-fix-large-volume-pdfs-books-digital-print.294442/",
+      "published": "2024-09-08T18:38:11.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Esko Automation Alternatives? | PrintPlanet.com",
+      "url": "https://printplanet.com/threads/esko-automation-alternatives.295676/",
+      "published": "2026-06-14T07:59:38.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Under the Hood: How Print Shops Handle Garbage Artwork - WhatTheyThink",
+      "url": "https://whattheythink.com/articles/129892-under-hood-how-print-shops-handle-garbage-artwork/",
+      "published": "2026-04-08T00:00:00.000Z",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Pricing & Plans",
+      "url": "https://contentsnare.com/pricing/",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Choosing or changing plans - Content Snare Help",
+      "url": "https://contentsnare.com/help/knowledge-base/choosing-or-changing-plans/",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Content Snare Pricing in 2026: 4 Plans Compared",
+      "url": "https://www.itechguides.com/products/content-snare/pricing/",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Pricing - Screaming Frog",
+      "url": "https://www.screamingfrog.co.uk/seo-spider/pricing/",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "FAQ",
+      "url": "https://www.screamingfrog.co.uk/seo-spider/faq/",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Screaming Frog SEO Spider",
+      "url": "https://www.screamingfrog.co.uk/seo-spider/",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Buy PitStop Pro | Enfocus",
+      "url": "https://www.enfocus.com/en/pitstop-pro/buy-now",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "Buy new subscription | Enfocus",
+      "url": "https://www0.enfocus.com/en/subscriptions/PPR/add?m=1",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    },
+    {
+      "title": "PitStop Pro – PDF Preflight & Editing Plugin | Enfocus",
+      "url": "https://www.enfocus.com/en/pitstop-pro",
+      "published": "N/A",
+      "review_status": "discovery_only_unless_cited_in_report"
+    }
+  ]
+}
