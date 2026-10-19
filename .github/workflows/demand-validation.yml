@@ -4,6 +4,10 @@ name: Demand validation checks and evidence
   workflow_dispatch:
   schedule:
     - cron: '57 10 * * *'
+  workflow_run:
+    workflows: ['Daily research pilot']
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: read
@@ -15,7 +19,7 @@ concurrency:
 
 jobs:
   validation:
-    if: github.repository == 'nikelef/venture-ai-ceo' && github.ref == 'refs/heads/main' && vars.VENTURE_GITHUB_ZERO_SPEND_CONFIRMED == 'true' && vars.VENTURE_SHUTDOWN != 'true' && (github.event_name == 'workflow_dispatch' || vars.VENTURE_VALIDATION_ENABLED == 'true')
+    if: github.repository == 'nikelef/venture-ai-ceo' && github.ref == 'refs/heads/main' && vars.VENTURE_GITHUB_ZERO_SPEND_CONFIRMED == 'true' && vars.VENTURE_SHUTDOWN != 'true' && (github.event_name == 'workflow_dispatch' || vars.VENTURE_VALIDATION_ENABLED == 'true') && (github.event_name != 'workflow_run' || (github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.head_repository.full_name == github.repository && (github.event.workflow_run.event == 'schedule' || github.event.workflow_run.event == 'workflow_dispatch')))
     runs-on: ubuntu-24.04
     timeout-minutes: 3
     env:
