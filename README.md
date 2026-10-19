@@ -1,6 +1,6 @@
 # Venture CEO
 
-Current demand experiment: a free local Shopify CSV checker with a proposed **EUR 9 agency handoff pack**, a worked public import checklist, and a prepared consented evidence collector. **Purchasing is unavailable. Measurement and registration are paused** pending the operator privacy contact and native authorization for collector-only secrets in Neon. No demand or revenue has been demonstrated. See [validation operations](docs/DEMAND_VALIDATION.md) and [market evidence](research/MARKET_VALIDATION.md).
+Current demand experiment: a free local Shopify CSV checker with a proposed **EUR 9 agency handoff pack**, an original import checklist, and separate optional measurement/registration operated by **CeoAgentAI**. **Purchasing is unavailable.** Contact: **ceoagentai@proton.me**. See [validation operations and activation evidence](docs/DEMAND_VALIDATION.md), [privacy](docs/PRIVACY_DRAFT.md) and [market evidence](research/MARKET_VALIDATION.md). Registrations and stated interest are not verified customers or revenue.
 
 A private, zero-outlay research pilot and a working browser-local catalog CSV evaluator. **The free evaluator is published and daily cloud research is enabled. No checkout, customer payment or revenue is active or verified.** Operating instructions remain in [MASTER_PROMPT.md](MASTER_PROMPT.md).
 
@@ -22,7 +22,7 @@ The local evaluator is at **http://127.0.0.1:8000/** while the preview process r
 
 Default execution replays dated, curated public evidence and scores ten opportunities using the master prompt's weights. It selects a winner plus two alternates and preserves counterarguments, assumptions, provenance and confidence. It is not a fresh market scan or demand validation. Optional `python -m ai_ceo.worker --live-feeds` refreshes three allowlisted RSS endpoints; this does not refresh the vendor evidence or prove buying intent.
 
-The evaluator checks UTF-8 comma-separated files locally in the browser: quoting, record shape, duplicate headings and a limited subset of Shopify catalog hints. It supports current/legacy heading aliases, handles image continuation rows, and downloads JSON diagnostics without source headings or cell values. It makes no upload, analytics or model requests. A clean report does not guarantee a successful import. It never modifies a store.
+The evaluator checks UTF-8 comma-separated files locally: quoting, record shape, headings and limited Shopify hints. It supports current/legacy aliases, image continuation rows and value-redacted JSON diagnostics. CSV contents never leave the browser; no store changes or model requests occur. A separate module contacts only the configured collector after voluntary consent: fixed event flags for measurement, or separately consented email/answers for registration. Local preview remains isolated from the production collector by its origin/CSP policy. A clean report does not guarantee an import.
 
 ## Verify
 

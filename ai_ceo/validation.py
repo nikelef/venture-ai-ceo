@@ -33,7 +33,7 @@ def assessment(data: dict) -> dict:
     if sum(source["sessions"] for source in sources) != data["candidate_relevant_sessions"]:
         raise ValueError("Source totals do not match")
     if not data["collection_enabled"]:
-        decision = "blocked_operator_privacy_contact"
+        decision = "blocked_collection_paused"
     elif data["independently_verified_willing_to_pay"] >= 3:
         decision = "review_customer_evidence_before_development"
     elif data["registrations"]:
