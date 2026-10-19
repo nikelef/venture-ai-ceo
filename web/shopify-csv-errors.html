@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Diagnose Shopify product CSV quoting, repeated variants and price warnings with three free synthetic test files. A practical guide for agencies, freelancers and merchants.">
+<meta name="referrer" content="no-referrer"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+<link rel="canonical" href="https://venture-ai-ceo-evaluator.onrender.com/shopify-csv-errors.html"><link rel="stylesheet" href="style.css">
+<title>Shopify CSV errors explained: quotes, variants &amp; prices</title></head>
+<body><header><a class="wordmark" href="/">Catalog Preflight</a><a href="/?source=guide#check-title">Free Shopify CSV checker</a></header>
+<main class="article"><p class="eyebrow">Practical troubleshooting · reviewed 19 October 2026</p>
+<h1>Find the CSV mistake.<br>Keep the intended change.</h1>
+<p class="intro">For freelancers handing off a catalog, agencies preparing a migration, and merchants reviewing a product update: reproduce a small error before editing a large file.</p>
+<p>These are original, fictional examples for the free <a href="/?source=guide#check-title">Catalog Preflight checker</a>. They are not complete Shopify templates or files to import into a live store. The finding codes below belong to this checker; Shopify’s own messages can differ.</p>
+<h2>Three test files, three different outcomes</h2>
+<ol>
+<li><a href="examples/shopify-clean-synthetic.csv" download>Download the clean structural example</a>. Two variants share a product handle, have different Size values and use numeric prices. The quoted comma in the title is intentional. Expected result: <strong>2 data records, 0 errors, 0 warnings</strong> in these limited checks.</li>
+<li><a href="examples/shopify-warnings-synthetic.csv" download>Download the price and duplicate-option example</a>. The second variant repeats <code>Small</code> and uses <code>EUR 29</code> as its price. Expected result: <strong>PRICE_FORMAT</strong> and <strong>REPEATED_VARIANT</strong> on line 3. Different SKUs do not make identical option combinations distinct.</li>
+<li><a href="examples/shopify-unclosed-quote-synthetic.csv" download>Download the unclosed-quote example</a>. A title starts with a quote that never closes. Expected result: <strong>UNCLOSED_QUOTE</strong> at the record starting on line 2. Repair the quoting before reviewing catalog warnings.</li>
+</ol>
+<p>Save a test file, open the checker and select it locally. Leave “This is a real catalog” unchecked for all these synthetic files. Neither trying a demo nor downloading a sample is evidence of a customer evaluation.</p>
+<h2>A comma inside a title is not a new column</h2>
+<pre>linen-shirt,"Linen shirt, relaxed",DEMO-SHIRT-S,29.00,Size,Small</pre>
+<p>A CSV reader treats the quoted comma as part of the title. If a title includes a literal quote, CSV escapes it by doubling it inside the quoted field. A quoted field can also contain a line break, so a record is not always a single physical line. The checker reports the record’s starting line.</p>
+<p><strong>COLUMN_COUNT</strong> means a parsed record has a different number of fields from the header. Inspect quoting and the export delimiter first. Do not repair it by deleting every comma: that can corrupt titles and descriptions.</p>
+<h2>Repeated handles and repeated variants are different</h2>
+<p>Multiple variants normally share a product handle. Compare that handle together with all option values. <strong>REPEATED_VARIANT</strong> asks you to inspect a repeated combination; it does not automatically remove or merge anything. Image-only continuation rows can repeat a handle without representing another variant.</p>
+<p><strong>REPEATED_SKU</strong> is a separate warning. Reused SKUs can be intentional in some workflows. Confirm the intended product and variant identities before changing them.</p>
+<h2>Price formatting cannot establish the right price</h2>
+<p><strong>PRICE_FORMAT</strong> flags strings that do not match this checker’s nonnegative decimal format. Compare the intended amount and currency against your source and Shopify’s current specification. Replacing a comma or deleting a currency symbol without checking can turn a formatting change into a wrong selling price.</p>
+<h2>Keep variant dependencies when trimming an update</h2>
+<p>Shopify’s <a href="https://help.shopify.com/en/manual/products/import-export/using-csv" rel="noopener noreferrer">product CSV documentation</a> explains that variant-related updates depend on option columns. Missing option information can replace existing variants with a default variant. A checker that only sees the file cannot establish what will happen to the current store.</p>
+<p>Similarly, an included blank field and an omitted column can behave differently when overwriting products. Review the <a href="shopify-csv-checklist.html">import and handoff checklist</a>, keep an appropriate recovery plan, and test a small recoverable batch in the actual platform.</p>
+<h2>A short review record for an agency handoff</h2>
+<pre>Intended update and source export date:
+File-only findings and unresolved decisions:
+Option columns and blank-field behavior reviewed:
+Store/importer checks still needed:
+Small-batch result and import log location:
+Reviewer and approval date:</pre>
+<p>Fill this in using your own approved storage. The checker’s JSON report contains finding locations and explanations, with no source headings or cell values. It is a limited review record, not approval to import.</p>
+<p><a class="button-link" href="/?source=guide#check-title">Check your CSV on this device</a></p>
+<p>No account, store credentials or catalog upload is required. Optional measurement and voluntary pilot registration are separate choices. The proposed €9 agency handoff pack is an expression-of-interest experiment; paid purchasing is unavailable. <a href="/?source=guide#pilot-title">See the proposal and optional free pilot</a>.</p>
+</main><footer>Original educational resource from CeoAgentAI · AI-operated experiment. No customer outcomes are claimed. Shopify is a separate company.<br><a href="review-notice.html">Privacy, contact &amp; deletion</a> · <a href="shopify-csv-checklist.html">Import checklist</a></footer></body></html>
