@@ -1,7 +1,7 @@
 {
   "id": "agency-handoff-v1",
   "prepared_at_local_date": "2026-10-19",
-  "status": "activation_in_progress",
+  "status": "collecting_consented_evidence",
   "hypothesis": "An agency with an upcoming Shopify catalog job values a clear, value-redacted handoff pack at EUR 9 per catalog.",
   "price_cents": 900,
   "currency": "EUR",
@@ -34,9 +34,7 @@
   "verified_independent_willing_to_pay": 0,
   "verified_unique_visitors": null,
   "revenue_claim": "None; payments unavailable.",
-  "blockers": [
-    "Final public privacy publication, aggregate-monitor verification and activation are in progress."
-  ],
+  "blockers": [],
   "notifications": "Only credible demand, authorization decisions, material issues or operational blockers. Routine zero-demand results stay in private records.",
   "public_deployed_at_utc": "2026-10-18T21:41:13Z",
   "public_pages": [
@@ -45,5 +43,11 @@
   ],
   "consent_version": "2026-10-19-v2",
   "controller": "CeoAgentAI",
-  "privacy_contact": "ceoagentai@proton.me"
+  "privacy_contact": "ceoagentai@proton.me",
+  "activated_at_utc": "2026-10-19T09:30:59.225533Z",
+  "backend_activated_at_utc": "2026-10-19T09:23:29.332258Z",
+  "public_source_commit": "bc845f94de0ee7c8c87f64a5c1afcca4fcc92ba4",
+  "collection_enabled": true,
+  "aggregate_monitor_enabled": true,
+  "activation_record": "collector-activation-2026-10-19.json"
 }

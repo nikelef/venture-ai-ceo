@@ -1,8 +1,8 @@
 # Demand validation operations
 
-The public free checker and proposed EUR 9 offer remain live. Owner identity and scoped Neon authorization are resolved, and the collector passed live QA while stopped. Registration/measurement are paused until final public and monitor activation checks below complete.
+**Optional consented registration and measurement are live.** CeoAgentAI's public privacy details, native deployment authorization, security QA and aggregate monitor were verified before activation. Payments remain disabled.
 
-## Evidence collector prepared
+## Live evidence collector
 
 - Dedicated Neon project `cool-firefly-02159743`, `venture-demand-validation`, Frankfurt, in connected organization `org-bold-glitter-92191180` (`Nikitas8`). The API confirmed organization plan `free` twice. No upgrade, payment method, subscription, Auth, AI Gateway or paid backup was enabled.
 - Schema preparation branch `br-little-shadow-bac5g9ii` (`schema-v1`); clean experiment branch `br-polished-feather-ba3h1u8g` (`experiment-v1`) inherits the empty schema. No customer data was copied from another project.
@@ -11,7 +11,7 @@ The public free checker and proposed EUR 9 offer remain live. Owner identity and
 - Prepared function slug `evidence`, Node.js 24, pool maximum two, TLS `verify-full`, five-second database connection/query timeouts. A public function now exists on the experiment branch; see the deployment and QA update below.
 - Bounds: 500 session admissions/day, 5,000 retained sessions, 500 registrations, 4 KiB request bodies, fixed fields and enums, no arbitrary upload endpoint. Identity ownership and independence are not inferred from email uniqueness. QA uses a separate secret and `test=true`, excluded from all aggregate queries.
 - Added voluntary consent, no cookies/storage/fingerprinting, in-memory browser session, AES-256-GCM encrypted contact, keyed deduplication and random receipt for deletion. Browser samples cannot generate a completed real-file evaluation. Raw contact/report data never enters GitHub artifacts.
-- App retention target 30 days, daily purge prepared in the aggregate check plus expiry on activity. Provider restore/log retention can differ. The currently paused system has no registrations. Do not promise a daily purge has executed before the monitor is actually activated and verified.
+- App retention target 30 days, daily purge prepared in the aggregate check plus expiry on activity. Provider restore/log retention can differ. At activation the contact/session tables contained no customer records; see the latest verified aggregate snapshot. Do not promise a daily purge has executed before the monitor is actually activated and verified.
 
 ## Free-plan safeguards
 
@@ -36,18 +36,24 @@ The owner explicitly authorized the dedicated collector's generated secrets and 
 - Local **45 Python + 23 Node tests passed**. No generated contact/read/QA keys matched intended source content; generic repository scan also applies.
 - No plaintext secrets in files, argv, terminal output, artifacts or commits. Temporary QA transport uses current-user Windows DPAPI, containing no database password. Remove its ignored encrypted blob after setup. Only the aggregate-read key may be placed in GitHub's designated Actions secret.
 
-Registration remains paused until this public notice is deployed, the aggregate-only monitor is configured and verified, and the exact endpoint/CSP is published. Record backend and public activation timestamps separately; do not backdate activation to schema preparation or QA. Contacts never go into GitHub. No payments are authorized.
+**Activation completed:** backend configuration deployment 4 enabled consented collection at **2026-10-19T09:23:29.332258Z**. Render published the enabled controls, exact CSP endpoint and notice at **2026-10-19T09:30:59.225533Z**, source **bc845f94de0ee7c8c87f64a5c1afcca4fcc92ba4**. All 12 public assets matched source, default consents were unchecked, and private paths returned 404. The saved Blueprint was schema-validated but not applied; the live page's CSP meta controls browser connections. Contacts never go into GitHub. No payments are authorized.
 
 Before subsequent code-only deploys, omit environment to inherit the existing protected values. Never replace the full environment with a lone shutdown flag without checking API replacement semantics. Do not rotate the contact encryption key while records exist without an approved migration. Emergency shutdown can deploy reviewed code that hard-stops enrollment while preserving the environment and withdrawal handling; public controls and monitoring have separate shutdown gates.
 
-## Automated monitoring prepared
+## Operational aggregate monitoring
 
-`python -m ai_ceo.validation` accepts a verified HTTPS Neon `/summary` URL and aggregate read key through environment variables. It refuses redirects, validates bounded count/source fields, excludes all contact data from output, writes only `runtime/validation-artifact/summary.json`, and never infers genuine unique people from sessions. The workflow job stays gated off until activation. A missing endpoint or failing check is a blocker, not evidence of no visitors or rejected demand.
+`python -m ai_ceo.validation` accepts a verified HTTPS Neon `/summary` URL and aggregate read key through environment variables. It refuses redirects, validates bounded count/source fields, excludes all contact data from output, writes only `runtime/validation-artifact/summary.json`, and never infers genuine unique people from sessions. The workflow is enabled with the exact summary URL and its aggregate-only Actions secret. Manual runs **39228891082** (stopped baseline) and **39230597673** (active collector) succeeded. Daily 05:41 UTC scheduling is configured; a scheduled firing has not yet been observed. A missing endpoint or failing check is a blocker, not evidence of no visitors or rejected demand.
 
-Local tests: `python scripts/run_tests.py`; `node --test --test-isolation=none tests/catalog.test.cjs tests/demand.test.mjs`. The Windows test runner creates only synthetic fixtures with inherited workspace permissions to avoid private temporary-directory ACL failures. Windows sandbox blocks Node child-process spawning, so local Node tests use no process isolation. Linux CI uses normal test isolation. Dependencies were downloaded from the official npm registry with integrity verification; lifecycle scripts were not run locally. Hosted CI then completed a clean install, all 67 tests, the production dependency audit (zero reported vulnerabilities) and the bundle build. **The later 48-check live integration passed while stopped; activation is tracked separately below.**
+Current verification: **45 Python + 23 Node tests**, plus **48 live integration checks and two additional retained-cap checks**. After a temporary platform HTTP 503, the same bundle was redeployed stopped as version 3; role/TLS, aggregates and remaining cap checks passed. Configuration version 4 then activated the same code. Every synthetic contact/session/cap fixture was removed and counters stayed unchanged. Current collector records and generated secrets were excluded from source and artifacts.
+
+Local tests: `python scripts/run_tests.py`; `node --test --test-isolation=none tests/catalog.test.cjs tests/demand.test.mjs`. The Windows test runner creates only synthetic fixtures with inherited workspace permissions to avoid private temporary-directory ACL failures. Windows sandbox blocks Node child-process spawning, so local Node tests use no process isolation. Linux CI uses normal test isolation. Dependencies were downloaded from the official npm registry with integrity verification; lifecycle scripts were not run locally. Hosted CI then completed a clean install, all 68 tests, the production dependency audit (zero reported vulnerabilities) and the bundle build. **The later 48-check live integration passed while stopped; activation is tracked separately below.**
 
 ## Decisions and distribution
 
 See [market evidence](../research/MARKET_VALIDATION.md), [experiment protocol](../research/experiments/agency-handoff-v1.json) and [permitted channels](../research/DISTRIBUTION.md). The free checker is already functional. The proposed paid pack is not sold. Initial targets are 100 genuine relevant visitors, 10 completed real evaluations, five qualified voluntary pilots and three independent buyers explicitly willing to pay EUR 9. Candidate sessions, unverified email forms, competitor reviews and test fixtures cannot satisfy those claims automatically.
 
-Until qualified exposure exists, the decision is **distribution unresolved**, with collection currently blocked. Do not expand product scope, activate payments, report hypothetical revenue or silently pivot because a new site has no measured traffic.
+Until qualified exposure exists, the decision is **distribution unresolved**, with consented collection now active. Do not expand product scope, activate payments, report hypothetical revenue or silently pivot because a new site has no measured traffic.
+
+
+
+Latest evidence: [activation record](../research/experiments/collector-activation-2026-10-19.json). Current counts are zero registrations/pilots/evaluations/willingness records, not proof of no visitors. Interactive visual QA was unavailable because no browser surface was enabled; HTTP/API and browser-script tests passed. The temporary current-user DPAPI QA transport was removed and its absence verified. Keys remain only in the authorized native stores. Repeat secure temporary setup only if future maintenance requires it.

@@ -48,3 +48,7 @@ Fresh secrets were generated through native Neon operations and stored in the de
 The running function was deployed initially stopped. Public `/status` identifies the application; Neon's reserved `/healthz` returns a platform “ok” and is not application/SQL health evidence. QA-only `/diagnostics` checks the actual role and verified TLS socket without returning records. Synthetic QA must always carry its private QA header and remain excluded by SQL summaries. No visitor/buyer claim follows from our own checks.
 
 Activation requires the public privacy notice, live method/CORS/consent/encryption/deletion/retention/quota/security checks, clean synthetic fixtures, exact CSP/endpoint, and a verified aggregate-only monitor. Preserve tests and evidence, and keep real collection stopped on any material failure.
+
+Activation completed on 19 October 2026: backend at 09:23:29.332258 UTC and public controls at 09:30:59.225533 UTC. All gates above passed; see [activation evidence](../research/experiments/collector-activation-2026-10-19.json). The aggregate-only monitor's active cloud read succeeded. Initial observed customer counters are zero, with unique visitors unverified. A first scheduled firing and interactive visual browser QA remain unobserved; neither is claimed as completed.
+
+The temporary DPAPI transport was removed and absence verified after setup. No application secrets remain in local plaintext files or intended source/artifacts; the native deployed environment and the aggregate-only GitHub Actions secret retain their authorized values.
