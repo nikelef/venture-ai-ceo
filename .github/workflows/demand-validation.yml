@@ -3,7 +3,7 @@ name: Demand validation checks and evidence
 "on":
   workflow_dispatch:
   schedule:
-    - cron: '37 10 * * *'
+    - cron: '41 5 * * *'
 
 permissions:
   contents: read
