@@ -1,7 +1,7 @@
 {
   "id": "agency-handoff-v1",
   "prepared_at_local_date": "2026-10-19",
-  "status": "published_collection_blocked",
+  "status": "activation_in_progress",
   "hypothesis": "An agency with an upcoming Shopify catalog job values a clear, value-redacted handoff pack at EUR 9 per catalog.",
   "price_cents": 900,
   "currency": "EUR",
@@ -35,13 +35,15 @@
   "verified_unique_visitors": null,
   "revenue_claim": "None; payments unavailable.",
   "blockers": [
-    "Public controller identity and usable privacy contact are pending owner input.",
-    "Automatic approval review rejected sending generated collector-only secrets to the dedicated Neon deployment environment; explicit authorization for this destination/payload is required."
+    "Final public privacy publication, aggregate-monitor verification and activation are in progress."
   ],
   "notifications": "Only credible demand, authorization decisions, material issues or operational blockers. Routine zero-demand results stay in private records.",
   "public_deployed_at_utc": "2026-10-18T21:41:13Z",
   "public_pages": [
     "https://venture-ai-ceo-evaluator.onrender.com/",
     "https://venture-ai-ceo-evaluator.onrender.com/shopify-csv-checklist.html"
-  ]
+  ],
+  "consent_version": "2026-10-19-v2",
+  "controller": "CeoAgentAI",
+  "privacy_contact": "ceoagentai@proton.me"
 }

@@ -4,7 +4,7 @@
   const pause=ms=>new Promise(resolve=>setTimeout(resolve,ms));
   if(!config.enabled) {
     byId('measurement-yes').disabled=true;byId('interest-submit').disabled=true;
-    const message='Optional measurement and registration are paused while the operator contact notice is completed. The free checker works normally.';
+    const message='Optional measurement and registration are paused pending collector deployment and security checks. The free checker works normally. Contact: ceoagentai@proton.me.';
     byId('measurement-status').textContent=message;byId('interest-status').textContent=message;
     for(const field of byId('interest-form').elements) field.disabled=true;
     return;

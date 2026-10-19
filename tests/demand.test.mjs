@@ -99,10 +99,22 @@ test('shutdown blocks public enrollment, QA stays marked synthetic, and privacy 
 test('session expiry, safe failures and summary authorization fail closed',async()=>{
   const f=fixture(),token=await f.begin();f.advance(4*3600000+1);
   assert.equal((await f.call('/event',{event:'interaction'},token)).status,401);
+  assert.equal((await f.call('/forget',{},token)).status,200);
+  assert.equal(f.sessions.size,0);
   const summary=await f.call('/summary',undefined,f.config.readKey);assert.equal(summary.status,200);
   f.store.admit=async()=>{throw new Error('private secret and email must not appear');};
   const response=await f.call('/session',{consent:CONSENT,measurement:true,role:'agency',source:'direct',website:'',automated:false});
   assert.equal(response.status,503);assert.ok(!(await response.text()).includes('private secret'));
+});
+test('runtime diagnostics require the separate QA key and cannot expose records',async()=>{
+  const f=fixture(true);let called=0;
+  const status=await (await f.call('/status')).json();assert.equal(status.application,'venture-validation');assert.equal(status.collection_enabled,false);
+  f.store.securityStatus=async()=>{called++;return {role:'venture_collector',privileged:false,tls:true,tls_authorized:true};};
+  assert.equal((await f.call('/diagnostics')).status,401);
+  assert.equal((await f.call('/diagnostics',undefined,f.config.readKey)).status,401);
+  assert.equal(called,0);
+  const r=await f.call('/diagnostics',undefined,null,{'x-validation-qa':f.config.qaKey});
+  assert.equal(r.status,200);assert.equal((await r.json()).tls_authorized,true);assert.equal(called,1);
 });
 test('SQL metrics exclude QA and cannot self-confirm independence; no catalog or payment tables',()=>{
   const store=readFileSync(new URL('../collector/store.mjs',import.meta.url),'utf8');

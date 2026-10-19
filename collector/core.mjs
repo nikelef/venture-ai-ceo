@@ -1,7 +1,7 @@
 import { createHash, createHmac, createCipheriv, randomBytes, timingSafeEqual } from 'node:crypto';
 
 export const EXPERIMENT = 'agency-handoff-v1';
-export const CONSENT = '2026-10-19-v1';
+export const CONSENT = '2026-10-19-v2';
 export const PRICE = 900;
 export const FLAGS = { engaged:1, interaction:2, evaluation_complete:4, sample:8, report_download:16 };
 export const ROLES = ['agency','merchant','catalog','other'];
@@ -62,11 +62,16 @@ export function createHandler(store, config, clock=()=>Date.now()) {
     const reply=(data,status=200)=>new Response(JSON.stringify(data),{status,headers});
     const path=new URL(request.url).pathname;
     try {
-      if(path==='/healthz' && request.method==='GET') return reply({application:'venture-validation',experiment:EXPERIMENT,collection_enabled:!config.stopped,payments_enabled:false,uploads_enabled:false});
+      if(['/status','/healthz'].includes(path) && request.method==='GET') return reply({application:'venture-validation',experiment:EXPERIMENT,collection_enabled:!config.stopped,payments_enabled:false,uploads_enabled:false});
       if(path==='/summary' && request.method==='GET') {
         if(!same(request.headers.get('authorization'),`Bearer ${config.readKey}`)) throw new Invalid(401,'Unauthorized.');
         await store.purge(clock()-30*86400000);
         return reply({...await store.summary(),collection_enabled:!config.stopped});
+      }
+      if(path==='/diagnostics') {
+        if(!same(request.headers.get('x-validation-qa'),config.qaKey)) throw new Invalid(401,'Unauthorized.');
+        if(request.method!=='GET') throw new Invalid(405,'GET required.');
+        return reply(await store.securityStatus());
       }
       if(!['/session','/event','/interest','/withdraw','/forget'].includes(path)) throw new Invalid(404,'Not found.');
       if(origin!==config.origin) throw new Invalid(403,'Origin not allowed.');
@@ -97,8 +102,9 @@ export function createHandler(store, config, clock=()=>Date.now()) {
       const raw=request.headers.get('authorization')?.replace(/^Bearer /,'')||'';
       if(!/^[A-Za-z0-9_-]{43}$/.test(raw)) throw new Invalid(401,'A consented session is required.');
       const id=sha(raw), session=await store.session(id);
-      if(!session || now-session.created_at>4*3600000) throw new Invalid(401,'Session expired. Please consent again.');
+      if(!session) throw new Invalid(401,'Session expired. Please consent again.');
       if(path==='/forget') {keys(data,[]);await store.forget(id);return reply({forgotten:true});}
+      if(now-session.created_at>4*3600000) throw new Invalid(401,'Session expired. Please consent again.');
       if(path==='/event') {
         keys(data,['event']);choice(data.event,Object.keys(FLAGS));
         if(!session.measurement) throw new Invalid(403,'Measurement consent required.');

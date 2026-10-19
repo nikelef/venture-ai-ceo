@@ -9,6 +9,17 @@ export function postgresStore(pool) {
   }
   const capacity=()=>{const e=new Error('Capacity');e.code='CAPACITY';throw e;};
   return {
+    async securityStatus() {
+      const client=await pool.connect();
+      try {
+        const {rows}=await client.query(`SELECT current_user AS role,
+          (SELECT rolsuper OR rolcreatedb OR rolcreaterole FROM pg_roles WHERE rolname=current_user) AS privileged,
+          has_schema_privilege(current_user,'public','CREATE') AS can_create,
+          has_column_privilege(current_user,'validation_interest','independently_verified','UPDATE') AS can_verify`);
+        return {...rows[0],tls:client.connection.stream.encrypted===true,
+          tls_authorized:client.connection.stream.authorized===true};
+      } finally {client.release();}
+    },
     async admit(row) {return locked(async c=>{
       const day=new Date(row.created_at).toISOString().slice(0,10);
       const counts=await c.query('SELECT count(*)::int AS n FROM validation_sessions');
