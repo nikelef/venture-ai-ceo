@@ -1,0 +1,516 @@
+{
+  "experiment": "agency-handoff-v1",
+  "wave": "acquisition-wave-1",
+  "recorded_at": "2026-10-19T12:57:21.612734+00:00",
+  "objective": "Reach genuine Shopify agencies, freelancers and merchants preparing catalog imports through invited free channels.",
+  "incremental_application_cost_eur": 0,
+  "payments_enabled": false,
+  "product_development_expansion": false,
+  "source": "e7d9fd0b70143c6d0fb101426d84f518d4efd3e4",
+  "render": {
+    "deployment": "dep-dbav6g2vcj2c73alje7g",
+    "status": "live",
+    "finished_at": "2026-10-19T10:39:02.813167Z",
+    "verification": {
+      "checked_at": "2026-10-19T10:39:46.076024+00:00",
+      "source": "e7d9fd0b70143c6d0fb101426d84f518d4efd3e4",
+      "assets": [
+        {
+          "path": "app.js",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "5bb3657d5e270bfbb986019516e2a0dcfe937eec3c3a08695aa1c858a4b4f37a"
+        },
+        {
+          "path": "catalog.js",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "3975cfce96ce8aa227b59ab50739c3fb304d3bcb51ff34ece37a9ffdcf0f5bce"
+        },
+        {
+          "path": "demand.js",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "5b02fa910108a43b2eb09d4442633250753a32a4e887007a1c4c2c054e96c818"
+        },
+        {
+          "path": "examples/shopify-clean-synthetic.csv",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "ffa40669b76787acffb95a6fedd29b68450b8ad01ac17ca01b4642b53741bc45"
+        },
+        {
+          "path": "examples/shopify-unclosed-quote-synthetic.csv",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "d5064a6c7d8fd457fc54b6e86808728a9e470317049e218addf3a96c2870021f"
+        },
+        {
+          "path": "examples/shopify-warnings-synthetic.csv",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "cc22b86faa1ed03c67c964126090ce8130ee596326064d5a20348a3e5a861825"
+        },
+        {
+          "path": "experiment-config.js",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "bc3f45313714d03bbeaabceef3dae98577b228b04c803cf6fd1c53bf223fec26"
+        },
+        {
+          "path": "health.json",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "376384887193c94b6ec76bc5bb834d1456df81d8f56d08a7af35e85b08665f29"
+        },
+        {
+          "path": "index.html",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "666b5a4ac9bfa21638fcd5dacef9b44d8e7feeb4d4a35bc9f2373e27f32a334e"
+        },
+        {
+          "path": "review-notice.html",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "64bb7719ffe1ffde8ffec51edb286667ac9b236cdadbf2bfe659db1613b6a78b"
+        },
+        {
+          "path": "robots.txt",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "fce83203166a8cc6ad4a7d4210bd113031e010b40f34cf82e1b41e2082c3ae1a"
+        },
+        {
+          "path": "shopify-csv-checklist.html",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "cb03950f3af7024eeb82a3abd22d01b9453051b9ee61d45445d72e2172920c81"
+        },
+        {
+          "path": "shopify-csv-errors.html",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "382a957b35a0f3e2faea48c53336f2d7b898481494980f9e57a50d4a766ff8c3"
+        },
+        {
+          "path": "sitemap.xml",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "2e4e6216a1a7bac8bad3c66cf396ab1a652cc198bb5bea677939f0a249a88fcc"
+        },
+        {
+          "path": "style.css",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "d22ff8b83e76a993131a8c5d68916ce4075e525376d70545de68132800d6187c"
+        },
+        {
+          "path": "venturecatalogpreflight20261019.txt",
+          "https": true,
+          "matches_committed_bytes": true,
+          "sha256": "3f7c5960c9689fef56f0d72470db6346a2241607005487689a7efa352fad960c"
+        }
+      ],
+      "passed": true,
+      "requests_counted_as_customers": false
+    }
+  },
+  "published_educational_resource": {
+    "url": "https://gist.github.com/nikelef/58194f3e76526da2bd423a60a0e03811",
+    "public": true,
+    "owner": "nikelef",
+    "created_at": "2026-10-19T10:39:49Z",
+    "files": [
+      {
+        "name": "README.md",
+        "matches_source": true,
+        "sha256": "cce55ac261518b1f5a99cee28dd409bb27dbffb69bbdb772758195abf2fb1972"
+      },
+      {
+        "name": "shopify-clean-synthetic.csv",
+        "matches_source": true,
+        "sha256": "ffa40669b76787acffb95a6fedd29b68450b8ad01ac17ca01b4642b53741bc45"
+      },
+      {
+        "name": "shopify-warnings-synthetic.csv",
+        "matches_source": true,
+        "sha256": "cc22b86faa1ed03c67c964126090ce8130ee596326064d5a20348a3e5a861825"
+      },
+      {
+        "name": "shopify-unclosed-quote-synthetic.csv",
+        "matches_source": true,
+        "sha256": "d5064a6c7d8fd457fc54b6e86808728a9e470317049e218addf3a96c2870021f"
+      }
+    ],
+    "contains_only_public_original_educational_content": true,
+    "customer_evidence": false,
+    "cost_eur": 0
+  },
+  "directory_submissions": [
+    {
+      "channel": "weblist",
+      "at": "2026-10-19T10:44:22.671881+00:00",
+      "form_url": "https://weblist.dev/submit/",
+      "action_url": "https://weblist.dev/submit.php",
+      "method": "POST",
+      "http_status": 303,
+      "curl_exit": 0,
+      "response_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "response_confirmation": [],
+      "acknowledged": true,
+      "publication_verified": false,
+      "cost_eur": 0,
+      "no_newsletter_requested": true,
+      "only_public_product_and_authorized_business_contact": true,
+      "no_customer_or_catalog_data": true,
+      "submission_attempts": 1,
+      "redirect_path": "/submit/",
+      "transport_attempts": 2,
+      "requests_reaching_http_response": 1,
+      "status": "submitted_for_manual_review_publication_unverified",
+      "receipt_caveat": "Observed HTTP 303 to the form-advertised sent=1 redirect. No independent email-delivery or review-queue confirmation.",
+      "promised_review_window": "Within one week per submission page",
+      "next_public_review_on": "2026-10-26"
+    },
+    {
+      "channel": "weirdweb",
+      "at": "2026-10-19T10:44:24.735185+00:00",
+      "form_url": "https://www.weirdwebtools.com/submit",
+      "action_url": "https://www.weirdwebtools.com/submit",
+      "method": "POST",
+      "http_status": 200,
+      "curl_exit": 0,
+      "response_sha256": "83f9ba191026c12eab1461ecdbc80ac55172f57d044b8f224b8615ad8fa6d7cf",
+      "response_confirmation": [
+        "ies, freelancers and merchants: quoting errors, repeated variant options and price strings. CSVs stay in your browser. Limited preflight, not an import guarantee. Op",
+        "te Captcha verification failed — please try again. Submit for review Weird Web Tools — every tool tried by a real human before it's listed. By task Submit a tool Adverti"
+      ],
+      "acknowledged": false,
+      "publication_verified": false,
+      "cost_eur": 0,
+      "no_newsletter_requested": true,
+      "only_public_product_and_authorized_business_contact": true,
+      "no_customer_or_catalog_data": true,
+      "submission_attempts": 1,
+      "transport_attempts": 2,
+      "requests_reaching_http_response": 1,
+      "status": "blocked_by_captcha",
+      "stop_reason": "The returned form says Captcha verification failed. No challenge solving, bypass or further retry.",
+      "owner_action_requested": false
+    },
+    {
+      "channel": "ListYourApp",
+      "at": "2026-10-19T12:48:06.471345+00:00",
+      "form_url": "https://listyourapp.online/submit",
+      "action_url": "https://listyourapp.online/api/submissions",
+      "method": "POST multipart/form-data",
+      "http_status": "201",
+      "curl_exit": 0,
+      "acknowledged": true,
+      "publication_verified": false,
+      "listing_type": "free",
+      "primary_category": "ecommerce-retail",
+      "secondary_category": "shopify",
+      "response_keys": [
+        "success",
+        "message"
+      ],
+      "message": "Your app has been submitted successfully and is awaiting review.",
+      "screenshot_sha256": "c93993186b5f3e8b0bc3e98705bb56807ab08a648a589a0a5d9f4d0ebee8f5bb",
+      "screenshot_unmodified": true,
+      "screenshot_bytes": 960382,
+      "cost_eur": 0,
+      "payments_or_featured_requested": false,
+      "no_customer_or_catalog_data": true,
+      "no_new_account": true,
+      "api_endpoint_observed_in_public_submission_client": true,
+      "only_one_submission_attempt": true,
+      "status": "submitted_for_manual_review",
+      "next_public_review_on": "2026-10-26"
+    }
+  ],
+  "indexnow": {
+    "at": "2026-10-19T10:47:54.639685+00:00",
+    "endpoint": "https://api.indexnow.org/indexnow",
+    "http_status": "200",
+    "curl_exit": 0,
+    "urls": [
+      "https://venture-ai-ceo-evaluator.onrender.com/",
+      "https://venture-ai-ceo-evaluator.onrender.com/shopify-csv-checklist.html",
+      "https://venture-ai-ceo-evaluator.onrender.com/shopify-csv-errors.html"
+    ],
+    "indexing_verified": false,
+    "counts_as_customer_evidence": false,
+    "cost_eur": 0
+  },
+  "automated_verification": {
+    "local_python_passed": 49,
+    "local_node_passed": 23,
+    "cloud_test_run": "39238967612",
+    "cloud_outcome": "success",
+    "repository_scan_files": 79,
+    "repository_scan_findings": 0,
+    "internal_html_links": "pass",
+    "synthetic_csv_outcomes_verified": 3,
+    "synthetic_samples_are_not_customer_evaluations": true,
+    "cloud_new_guard_python_passed": 49,
+    "cloud_catalog_node_passed": 10,
+    "cloud_new_guard_test_run": "39255439621"
+  },
+  "monitoring": {
+    "enabled": true,
+    "workflow": "demand-validation.yml",
+    "cron_utc": "57 10 * * *",
+    "last_verified_dispatch": "39238967612",
+    "last_dispatch_completed_at": "2026-10-19T10:39:22Z",
+    "runs_this_utc_day": 4,
+    "max_runs_per_utc_day": 4,
+    "schedule_verification": "native_research_schedule_and_automatic_completion_monitor_verified_separately; standalone_monitor_cron_not_observed",
+    "prior_manual_snapshot": {
+      "experiment": "agency-handoff-v1",
+      "checked_at": "2026-10-19T10:39:19.850639+00:00",
+      "collection_enabled": true,
+      "counts": {
+        "engaged_sessions": 0,
+        "candidate_relevant_sessions": 0,
+        "product_interactions": 0,
+        "completed_evaluations": 0,
+        "sample_sessions": 0,
+        "registrations": 0,
+        "pilot_requests": 0,
+        "qualified_pilots_unverified": 0,
+        "willing_to_pay_unverified": 0,
+        "independently_verified_willing_to_pay": 0
+      },
+      "acquisition_sources": [],
+      "verified_unique_visitors": null,
+      "decision": "distribution_unresolved_continue_free_experiment",
+      "demand_validated": false,
+      "payments_enabled": false,
+      "targets": {
+        "genuine_relevant_visitors": 100,
+        "completed_evaluations": 10,
+        "qualified_voluntary_pilots": 5,
+        "independent_explicit_willing_to_pay": 3
+      },
+      "caveat": "Consented sessions can include repeat people. Email ownership, qualification and independence require review. No traffic alone is not a demand rejection."
+    },
+    "aggregate": {
+      "experiment": "agency-handoff-v1",
+      "checked_at": "2026-10-19T12:53:01.491590+00:00",
+      "collection_enabled": true,
+      "counts": {
+        "engaged_sessions": 0,
+        "candidate_relevant_sessions": 0,
+        "product_interactions": 0,
+        "completed_evaluations": 0,
+        "sample_sessions": 0,
+        "registrations": 0,
+        "pilot_requests": 0,
+        "qualified_pilots_unverified": 0,
+        "willing_to_pay_unverified": 0,
+        "independently_verified_willing_to_pay": 0
+      },
+      "acquisition_sources": [],
+      "verified_unique_visitors": null,
+      "decision": "distribution_unresolved_continue_free_experiment",
+      "demand_validated": false,
+      "payments_enabled": false,
+      "targets": {
+        "genuine_relevant_visitors": 100,
+        "completed_evaluations": 10,
+        "qualified_voluntary_pilots": 5,
+        "independent_explicit_willing_to_pay": 3
+      },
+      "caveat": "Consented sessions can include repeat people. Email ownership, qualification and independence require review. No traffic alone is not a demand rejection."
+    },
+    "automatic_completion_trigger": true,
+    "source": "2741447d8b830e9ccd015a4fd0ca1bebeedb0a51",
+    "scheduled_research_run": "39240737172",
+    "scheduled_research_event": "schedule",
+    "scheduled_research_completed_at": "2026-10-19T10:54:11Z",
+    "scheduled_research_cron_utc": "23 5 * * *",
+    "scheduled_research_delay_note": "Scheduled execution arrived hours after its nominal time; no on-time or uptime guarantee.",
+    "completion_test_upstream_run": "39255439621",
+    "completion_test_upstream_event": "workflow_dispatch",
+    "automatic_monitor_run": "39255505199",
+    "automatic_monitor_event": "workflow_run",
+    "automatic_monitor_completed_at": "2026-10-19T12:53:04Z",
+    "live_aggregate_checked_at": "2026-10-19T12:53:01.491590+00:00",
+    "completion_provenance_checks": [
+      "Own private repository and main",
+      "Only existing research workflow path/name",
+      "Only schedule or workflow_dispatch source",
+      "Success and first attempt",
+      "Native API confirms upstream run ID and SHA",
+      "Same four-run daily ceiling",
+      "No secrets on PR/fork completion",
+      "No redirect of authentication"
+    ],
+    "standalone_monitor_schedule_runs_observed": 0,
+    "scheduled_research_runs_observed": 1,
+    "scheduled_research_source": "c056e7b2034bc19018310fd990a92173bcd27610"
+  },
+  "scheduler_authorization": {
+    "status": "verified_native_grant",
+    "github_rejection": "OAuth App cannot update a workflow without workflow scope.",
+    "input_rejection": "write_stdin approval required; granular sandbox_approval is disabled.",
+    "owner_text_authorization_received": true,
+    "native_scope_grant_verified": true,
+    "existing_remote_schedule_preserved": false,
+    "native_owner_operated_authorization_window_opened": true,
+    "no_automated_authentication_dialog_or_terminal_input_after_rejection": true,
+    "scope_verified_at": "2026-10-19T10:52:33Z",
+    "verified_account": "nikelef",
+    "scope": "workflow",
+    "previous_schedule_preserved_until_native_grant": true,
+    "authorized_schedule_change_source": "c056e7b2034bc19018310fd990a92173bcd27610"
+  },
+  "qualification": {
+    "verified_genuine_relevant_unique_visitors": null,
+    "sufficient_qualified_exposure_established": false,
+    "commercial_demand_demonstrated": false,
+    "publications_submissions_search_crawlers_qa_and_operator_checks_count_as_customers": false,
+    "ai_generated_opinions_count_as_customer_evidence": false
+  },
+  "decision": "continue_permitted_free_distribution_without_feature_expansion_or_payments",
+  "review": {
+    "first_directory_and_channel_review_on": "2026-10-26",
+    "targets": {
+      "genuine_relevant_visitors": 100,
+      "completed_evaluations": 10,
+      "qualified_voluntary_pilots": 5,
+      "independent_explicit_willing_to_pay": 3
+    },
+    "continue": "Review independent customer evidence before expanding development; intent is not a purchase.",
+    "improve": "Use qualified voluntary objections to revise the handoff offer without treating AI opinions as customers.",
+    "pivot": "If independently corroborated qualified exposure reaches the provisional threshold but commercial response remains weak, compare alternatives rather than adding features.",
+    "no_exposure": "Treat absent relevant exposure as unresolved distribution, not product rejection. Investigate more reachable channels/opportunities if free distribution remains ineffective."
+  },
+  "competitive_caveat": "Multiple close free tools advertise browser-only Shopify checks and downloadable reports; the proposed EUR 9 handoff differentiation remains unproven.",
+  "unrelated_assets": "Maritime-Carbon and existing Neon collector deployment were not modified in this wave.",
+  "limits": [
+    "Standalone 10:57 UTC demand cron has no observed event. The research schedule and completion-trigger monitor each have native live proof; the first post-install schedule-to-monitor chain has not yet been observed.",
+    "Native interactive browser QA unavailable; a real remote Chrome screenshot was visually inspected. HTTP/source/VM checks passed.",
+    "Directory acknowledgement is not publication, a visitor, endorsement or demand.",
+    "Mailbox receipt and follow-up handling are not connected to this agent."
+  ],
+  "primary_sources": [
+    {
+      "url": "https://community.shopify.com/guidelines",
+      "finding": "App promotion confined to Ask and Offer; AI-generated posts removed. No post submitted."
+    },
+    {
+      "url": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies",
+      "finding": "Original project-related readme links permitted; excessive bulk promotion and deceptive activity prohibited. One substantive educational Gist published."
+    },
+    {
+      "url": "https://docs.github.com/en/get-started/writing-on-github/editing-and-sharing-content-with-gists/creating-gists",
+      "finding": "Public Gists are searchable and appear in Discover. Neither implies any observed exposure."
+    },
+    {
+      "url": "https://weblist.dev/submit/",
+      "finding": "Free no-account manual review; screenshots provided by directory."
+    },
+    {
+      "url": "https://weblist.dev/privacy-policy/",
+      "finding": "Submission contact retained for review/reply; separate newsletter not used."
+    },
+    {
+      "url": "https://www.weirdwebtools.com/submit",
+      "finding": "Invites single-purpose free-to-try tools; actual submission returned CAPTCHA failure."
+    },
+    {
+      "url": "https://nouploadtools.com/submit",
+      "finding": "Suitable privacy-oriented candidate; no replay allowed; not submitted."
+    },
+    {
+      "url": "https://listyourapp.online/submit",
+      "finding": "Free ordinary review; actual product screenshot required; not submitted."
+    },
+    {
+      "url": "https://launch.ignlab.net/submit.html",
+      "finding": "Free review but form requires a human challenge; not submitted."
+    },
+    {
+      "url": "https://github.com/julionc/awesome-shopify/blob/main/.github/pull_request_template.md",
+      "finding": "Software entries must have an appropriate open-source license. Private product not submitted; no fork or PR created."
+    },
+    {
+      "url": "https://www.saashub.com/services/submit",
+      "finding": "Submissions on free subdomains excluded. Not submitted."
+    },
+    {
+      "url": "https://www.indexnow.org/documentation",
+      "finding": "HTTP 200 acknowledges changed URLs; does not establish indexing or traffic."
+    },
+    {
+      "url": "https://help.shopify.com/en/manual/products/import-export/using-csv",
+      "finding": "Primary reference for quoting, current columns, option dependencies and overwrite behavior."
+    },
+    {
+      "url": "https://shopsheets.co/tools",
+      "finding": "Provider advertises 28 free browser tools, including Shopify CSV validation, mapping and diff."
+    },
+    {
+      "url": "https://launch.ignlab.net/t/catalog-readiness-checker",
+      "finding": "Close free alternative advertises local Shopify checks and report downloads. No reviews were displayed; not evidence of our demand."
+    },
+    {
+      "url": "https://github.com/codebruinc/schemamap",
+      "finding": "Provider advertises free local mapping/validation and CLI; published schema claims not independently certified."
+    },
+    {
+      "url": "https://github.com/q00tar00/preflight-kit/blob/main/CONTRIBUTING.md",
+      "finding": "Another local Shopify CSV validation project; contributions restricted to useful project work, not a promotion channel."
+    },
+    {
+      "url": "https://listyourapp.online/terms",
+      "finding": "Free ordinary listings invited, moderation required, submitter retains content ownership with non-exclusive display permission; no featured payment selected."
+    },
+    {
+      "url": "https://listyourapp.online/privacy",
+      "finding": "Business contact for moderation, not publicly displayed; real screenshot accepted through documented public form endpoint."
+    },
+    {
+      "url": "https://microlink.io/screenshot",
+      "finding": "Anonymous no-key free screenshots advertised. Actual response confirmed free plan and 25-request quota; one request used."
+    },
+    {
+      "url": "https://nosignuptools.com/submit",
+      "finding": "Actual form client requires icon, screenshot and tag selection; not submitted."
+    },
+    {
+      "url": "https://www.githubstatus.com/api/v2/summary.json",
+      "finding": "Actions operational and no listed incident at inspection; no outage inferred from missing direct cron event."
+    }
+  ],
+  "research_method": {
+    "tool": "Exa Search",
+    "queries": 7,
+    "requested_result_slots": 48,
+    "note": "Requested result slots count returned-source capacity, not unique sources or independent customer observations.",
+    "returned_results": 48,
+    "unique_exact_urls": 47,
+    "selected_primary_sources_recorded": 22
+  },
+  "visual_qa": {
+    "method": "Remote Chromium screenshot through documented anonymous Microlink free endpoint",
+    "pricing_plan_header": "free",
+    "free_limit_header": 25,
+    "remaining_after_request": 24,
+    "screenshot_requests": 1,
+    "cost_eur": 0,
+    "target": "https://venture-ai-ceo-evaluator.onrender.com/",
+    "width": 2560,
+    "height": 7502,
+    "bytes": 960382,
+    "sha256": "c93993186b5f3e8b0bc3e98705bb56807ab08a648a589a0a5d9f4d0ebee8f5bb",
+    "image_edited": false,
+    "visual_result": "Public application rendered; no selected file; optional measurement off; registration/pilot/real-catalog boxes unchecked; EUR 9 proposal and no-purchase disclosure visible.",
+    "interactive_browser_test_performed": false,
+    "screenshot_is_customer_evidence": false,
+    "submitted_to_directory": "ListYourApp"
+  }
+}

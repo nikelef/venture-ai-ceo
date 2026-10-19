@@ -2,6 +2,18 @@
 
 **Optional consented registration and measurement are live.** CeoAgentAI's public privacy details, native deployment authorization, security QA and aggregate monitor were verified before activation. Payments remain disabled.
 
+## Acquisition checkpoint — 19 October 2026
+
+An original error guide, three verified synthetic files and a public educational Gist are published; two free directory submissions await review. [Distribution decisions](../research/DISTRIBUTION.md) and the [structured wave record](../research/experiments/acquisition-wave-1-2026-10-19.json) distinguish publication, submitted forms, blocked channels and customer observations. One real remote Chrome screenshot was visually checked and supplied to ListYourApp; it contained no file or consented session. Sample downloads, snapshots and our verification requests never count as genuine evaluations. No paid development or purchase was activated.
+
+Manual cloud run **39238967612**, source `e7d9fd0b70143c6d0fb101426d84f518d4efd3e4`, passed all tests and live aggregate/retention checks. At **10:39:19 UTC**, all customer counters were zero; verified unique relevant people remain unknown. This was a manual dispatch, not proof of scheduled execution.
+
+The direct daily schedule is **10:57 UTC**, with no observed native `schedule` run yet. At 10:52:33 UTC the native API confirmed `nikelef` and the added `workflow` scope; changes were pushed afterwards. The owner completed native sign-in to resolve earlier scope/input refusals; no rejected operation was bypassed.
+
+Actual scheduled research **39240737172** completed at **10:54:11 UTC**, significantly later than its nominal 05:23 UTC schedule. As a backup, source `2741447d8b830e9ccd015a4fd0ca1bebeedb0a51` adds a `workflow_run` trigger after successful research on main. The guard checks own repository, exact research path/name, allowed source event, success, first attempt, run ID and SHA, with independent GitHub API confirmation before the aggregate-read step. PR/fork completions cannot reach it. Read-only permissions, the three-minute timeout and shared four-validation-runs/day ceiling remain.
+
+For live integration QA, manual research **39255439621** passed the new hosted Python guard tests and automatically caused aggregate monitor **39255505199**, native event **workflow_run**. The latter passed at **12:53:04 UTC**, with a **12:53:01 UTC** snapshot of all-zero customer counters and unknown verified unique people. All **72 local tests** passed. This proves cloud completion automation, not a direct cron firing or the first post-install scheduled-to-monitor chain. Do not re-dispatch merely to obtain more green checks; today's four-validation-run ceiling has been reached.
+
 ## Live evidence collector
 
 - Dedicated Neon project `cool-firefly-02159743`, `venture-demand-validation`, Frankfurt, in connected organization `org-bold-glitter-92191180` (`Nikitas8`). The API confirmed organization plan `free` twice. No upgrade, payment method, subscription, Auth, AI Gateway or paid backup was enabled.
@@ -42,7 +54,7 @@ Before subsequent code-only deploys, omit environment to inherit the existing pr
 
 ## Operational aggregate monitoring
 
-`python -m ai_ceo.validation` accepts a verified HTTPS Neon `/summary` URL and aggregate read key through environment variables. It refuses redirects, validates bounded count/source fields, excludes all contact data from output, writes only `runtime/validation-artifact/summary.json`, and never infers genuine unique people from sessions. The workflow is enabled with the exact summary URL and its aggregate-only Actions secret. Manual runs **39228891082** (stopped baseline) and **39230597673** (active collector) succeeded. Daily 05:41 UTC scheduling is configured; a scheduled firing has not yet been observed. A missing endpoint or failing check is a blocker, not evidence of no visitors or rejected demand.
+`python -m ai_ceo.validation` accepts a verified HTTPS Neon `/summary` URL and aggregate read key through environment variables. It refuses redirects, validates bounded count/source fields, excludes all contact data from output, writes only `runtime/validation-artifact/summary.json`, and never infers genuine unique people from sessions. The workflow is enabled with the exact summary URL and its aggregate-only Actions secret. Manual runs **39228891082** (stopped baseline), **39230597673** (active collector) and **39238967612** (acquisition checkpoint) succeeded, followed by automatic completion-trigger run **39255505199**. Daily 10:57 UTC scheduling is configured and a trusted research-completion backup is tested. A standalone scheduled demand firing remains unobserved. A missing endpoint or failing check is a blocker, not evidence of no visitors or rejected demand.
 
 Current verification: **45 Python + 23 Node tests**, plus **48 live integration checks and two additional retained-cap checks**. After a temporary platform HTTP 503, the same bundle was redeployed stopped as version 3; role/TLS, aggregates and remaining cap checks passed. Configuration version 4 then activated the same code. Every synthetic contact/session/cap fixture was removed and counters stayed unchanged. Current collector records and generated secrets were excluded from source and artifacts.
 

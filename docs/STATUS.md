@@ -2,6 +2,14 @@
 
 **Optional customer registration and consented measurement are live. Payments remain disabled.**
 
+Acquisition wave 1 is published: an original [CSV error guide](https://venture-ai-ceo-evaluator.onrender.com/shopify-csv-errors.html), three synthetic test files and a [public educational Gist](https://gist.github.com/nikelef/58194f3e76526da2bd423a60a0e03811). Public source `e7d9fd0b70143c6d0fb101426d84f518d4efd3e4` is live; all 16 assets matched source. Weblist and ListYourApp acknowledged free submissions; both await review, with no publication claimed. A real remote Chrome screenshot was visually checked and supplied to ListYourApp. IndexNow acknowledged three changed URLs; indexing and traffic are unverified. A CAPTCHA rejection stopped another submission. [Channel records](../research/DISTRIBUTION.md).
+
+The [automatic cloud check](https://github.com/nikelef/venture-ai-ceo/actions/runs/39255505199) passed provenance, aggregate read and retention at **12:53:04 UTC**. The **12:53:01 UTC** snapshot has all customer counters at zero; genuine unique relevant visitors remain unknown. Current code passes **72 local tests**; the new guard also passed hosted Python tests. Qualified exposure has not been established. Further product feature development remains paused while distribution is tested.
+
+**Cloud execution verification:** the owner completed native GitHub authorization; `workflow` scope and `nikelef` were verified. An actual scheduled research run **39240737172** succeeded, with a substantial scheduling delay. A backup completion trigger was installed and tested: research **39255439621** automatically caused monitor **39255505199** with native event `workflow_run`. Upstream ID/SHA are independently checked, PR/fork events refused, and the same four-run cap applies. The standalone **10:57 UTC** demand cron and first post-install scheduled-to-monitor chain remain unobserved. Existing research still schedules at 05:23 UTC; no punctuality guarantee or always-on agent is claimed. No authorization denial was bypassed.
+
+## Collection activation checkpoint (earlier on 19 October)
+
 - Public application: https://venture-ai-ceo-evaluator.onrender.com
 - [Published privacy/contact notice](https://venture-ai-ceo-evaluator.onrender.com/review-notice.html): **CeoAgentAI**, **ceoagentai@proton.me**, **Verantzerou 1, 10677 Athens, Greece**, **+30 210 3823709**. The owner confirmed the registered name and clarified the postal code; registration is not independently verified.
 - Backend activation: **2026-10-19 09:23:29.332258 UTC**, native Neon deployment **4**, on the existing dedicated Frankfurt experiment branch. Restricted role, verified TLS and scoped secrets were checked.

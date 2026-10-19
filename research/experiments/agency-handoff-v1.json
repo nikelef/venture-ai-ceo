@@ -49,5 +49,9 @@
   "public_source_commit": "bc845f94de0ee7c8c87f64a5c1afcca4fcc92ba4",
   "collection_enabled": true,
   "aggregate_monitor_enabled": true,
-  "activation_record": "collector-activation-2026-10-19.json"
+  "activation_record": "collector-activation-2026-10-19.json",
+  "acquisition_wave_record": "research/experiments/acquisition-wave-1-2026-10-19.json",
+  "product_expansion_gate": "Independent customer evidence before further feature development; no automatic acceptance from sessions or unverified signups.",
+  "monitor_cron_utc": "57 10 * * *",
+  "monitor_backup_trigger": "After successful trusted main-branch Daily research pilot completion; API-verified provenance and same daily cap."
 }
