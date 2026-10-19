@@ -8,7 +8,9 @@ An additional [opportunity challenge](../research/OPPORTUNITY_REVIEW_2026-10-19.
 
 The new `demand-validation.yml` workflow runs tests/build on manual dispatch. Daily aggregate reads at 05:41 UTC remain gated by `VENTURE_VALIDATION_ENABLED=false`; no personal data or secret has been placed in GitHub. Existing research automation below is preserved and is not a customer-demand measurement.
 
-The revised landing page and original checklist are **live**, 12 public assets match the deployed source, and hosted verification passed **67 tests**, the dependency audit and build. IndexNow acknowledged both public page submissions; indexing and genuine visitors remain unproven. The activation request is pending; no paid-product development is justified yet.
+The revised landing page and original checklist are **live**. The 19 October guide improvement deployed from `deb9e51043ac73baa4a06774d6113d746115692b`; all 12 public assets matched that commit. It adds variant-dependency and blank-field guidance, a free local handoff note, and an explicit paused-registration disclosure. Local verification passed **45 Python + 22 Node tests**, with no repository-scan findings. Earlier hosted collector checks passed 67 tests, the dependency audit and build. IndexNow acknowledged the changed guide URL; indexing and genuine visitors remain unproven. See the [latest deployment record](../research/experiments/agency-handoff-v1-content-2026-10-19.json). The activation request is pending; no paid-product development is justified yet.
+
+A new [manual cloud research run](https://github.com/nikelef/venture-ai-ceo/actions/runs/39217160729) succeeded at 07:37 UTC on 19 October, restored the previous checkpoint and retained three research runs / 27 audit events. Downloaded archive/file hashes, SQLite integrity and the audit chain were independently verified. This is workflow continuity, not a scheduled firing or customer demand.
 
 ## Earlier deployment and research status
 

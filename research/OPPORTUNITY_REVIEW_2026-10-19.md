@@ -47,3 +47,5 @@ At the morning audit, both GitHub workflows reported active and repository Actio
 
 The existing cloud worker replays curated opportunity reviews and fetches general public-feed signals. It does not perform this new multi-source research unattended or collect customer evidence. Preserve its checkpoint history and verify any new dispatch independently.
 
+Completed follow-through: the guide revision is live from `deb9e51043ac73baa4a06774d6113d746115692b`, with all 12 public assets matching the committed bytes. Local tests passed 45 Python + 22 Node cases and the repository scan reported zero findings. IndexNow returned HTTP 200 for the changed guide; no indexing or visitors are inferred. Manual research run [39217160729](https://github.com/nikelef/venture-ai-ceo/actions/runs/39217160729) succeeded, restored run 39160738590 and retained three runs / 27 audit events. Its archive digest, file hashes, SQLite integrity and audit chain were independently checked. Scheduled firing remains unobserved. [Verification record](experiments/agency-handoff-v1-content-2026-10-19.json).
+

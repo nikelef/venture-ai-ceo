@@ -1,0 +1,119 @@
+{
+  "commit": "deb9e51043ac73baa4a06774d6113d746115692b",
+  "deployment_id": "dep-dbash7dg1s2s73blremg",
+  "render_finished_at_utc": "2026-10-19T07:37:12.699141Z",
+  "recorded_at_utc": "2026-10-19T07:38:49.200917+00:00",
+  "assets": [
+    {
+      "path": "index.html",
+      "http_status": 200,
+      "sha256": "fcdcb3f656d218ed43860933abae0e1ed6a533065e0a129f51f5e96cf6a4ae84",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "catalog.js",
+      "http_status": 200,
+      "sha256": "3975cfce96ce8aa227b59ab50739c3fb304d3bcb51ff34ece37a9ffdcf0f5bce",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "app.js",
+      "http_status": 200,
+      "sha256": "5bb3657d5e270bfbb986019516e2a0dcfe937eec3c3a08695aa1c858a4b4f37a",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "demand.js",
+      "http_status": 200,
+      "sha256": "46fc16db46ba88f4744a9c316dadb1a187e7e807ae48cf5f376841cc48eab27b",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "experiment-config.js",
+      "http_status": 200,
+      "sha256": "4054518e203b89291396734b998d06ee67795215353bfa46973120c22440bb80",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "review-notice.html",
+      "http_status": 200,
+      "sha256": "be9b26577276928768657dd8fbc3dd8e195b68e874996fbe07a4cdabda90028f",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "style.css",
+      "http_status": 200,
+      "sha256": "d22ff8b83e76a993131a8c5d68916ce4075e525376d70545de68132800d6187c",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "shopify-csv-checklist.html",
+      "http_status": 200,
+      "sha256": "ff044491ec45a1250ccd829f4f5801025f0f289d5f2a8dd2d5d148e2e14d9329",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "sitemap.xml",
+      "http_status": 200,
+      "sha256": "54809a4e7bb5f56c58aec135c2ce8e4f14ac0e7aa2f89f62b5da0ec0f4cc4cc0",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "robots.txt",
+      "http_status": 200,
+      "sha256": "fce83203166a8cc6ad4a7d4210bd113031e010b40f34cf82e1b41e2082c3ae1a",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "venturecatalogpreflight20261019.txt",
+      "http_status": 200,
+      "sha256": "3f7c5960c9689fef56f0d72470db6346a2241607005487689a7efa352fad960c",
+      "matches_deployed_commit": true
+    },
+    {
+      "path": "health.json",
+      "http_status": 200,
+      "sha256": "376384887193c94b6ec76bc5bb834d1456df81d8f56d08a7af35e85b08665f29",
+      "matches_deployed_commit": true
+    }
+  ],
+  "collection_enabled": false,
+  "payments_enabled": false,
+  "verified_unique_visitors": null,
+  "agent_checks_are_not_customer_visitors": true,
+  "local_tests": {
+    "python": 45,
+    "node": 22,
+    "conclusion": "passed"
+  },
+  "browser_visual_qa": "not performed; browser control unavailable",
+  "experiment": "agency-handoff-v1",
+  "change": "Original guide: variant dependencies, blank-field rules, local handoff note, explicit paused registration",
+  "previous_deployment_record": "agency-handoff-v1-deployment.json",
+  "cloud_research": {
+    "run_id": 39217160729,
+    "event": "workflow_dispatch",
+    "conclusion": "success",
+    "source_commit": "deb9e51043ac73baa4a06774d6113d746115692b",
+    "previous_run_id": "39160738590",
+    "artifact_id": 12170281389,
+    "artifact_sha256": "d70ca0d9c55b271a4e254e8aee39996c4218199a6528944ffefa7a0613bbeb96",
+    "file_hashes_verified": true,
+    "audit_chain_verified": true,
+    "sqlite_integrity": "ok",
+    "audit_events": 27,
+    "research_runs": 3,
+    "verified_payment_count": 0,
+    "model_calls": 0,
+    "not_customer_demand": true,
+    "finished_at_utc": "2026-10-19T07:37:31Z"
+  },
+  "indexnow": {
+    "path": "/shopify-csv-checklist.html",
+    "http_status": 200,
+    "meaning": "Submission acknowledged, not evidence of indexing or visitors"
+  },
+  "scheduled_execution_observed": false,
+  "customer_evidence": [],
+  "demand_validated": false
+}
